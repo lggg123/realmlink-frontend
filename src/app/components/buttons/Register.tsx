@@ -1,21 +1,38 @@
 // components/Register.tsx
 import React, { useState } from 'react';
 
+interface RegisterFormData {
+    email: string;
+    walletAddress: string;
+}
+
 const Register: React.FC = () => {
-    const [email, setEmail] = useState('');
-    const [walletAddress, setWalletAddress] = useState('');
+    const [formData, setFormData] = useState<RegisterFormData>({
+        email: '',
+        walletAddress: ''
+    });
 
-    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(event.target.value);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
     };
 
-    const handleWalletAddressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setWalletAddress(event.target.value);
-    };
-
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         // Add logic for form submission, e.g., sending data to a server
+        const response = await fetch('http://localhost:5000/api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+
+        // Handle the response from the server
+        const data = await response.json();
+        console.log(data);
     };
 
     return (
@@ -25,8 +42,8 @@ const Register: React.FC = () => {
                 type="email"
                 id="email"
                 name="email"
-                value={email}
-                onChange={handleEmailChange}
+                value={formData.email}
+                onChange={handleChange}
                 required
             />
 
@@ -35,8 +52,8 @@ const Register: React.FC = () => {
                 type="text"
                 id="walletAddress"
                 name="walletAddress"
-                value={walletAddress}
-                onChange={handleWalletAddressChange}
+                value={formData.walletAddress}
+                onChange={handleChange}
                 required
             />
 
