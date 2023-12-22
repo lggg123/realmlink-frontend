@@ -7,11 +7,16 @@ import WhitepaperButton from './components/buttons/WhitepaperButton'
 import Register from './components/buttons/Register'
 
 export default function Home() {
+  const handleConnectWallet = (address: string) => {
+    // Your logic for handling the wallet connection in the Home component
+    setWalletAddress(address);
+  };
+
   return (
     <main className="bg-gray-900 min-h-screen flex flex-col items-center justify-center">
       <div className="mb-8">
         <div className="">
-          <WalletConnection />
+          <WalletConnection onConnectWallet={handleConnectWallet} />
         </div>
       </div>
       <Hero />
