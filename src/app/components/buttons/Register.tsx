@@ -37,12 +37,12 @@ const Register: React.FC = () => {
 
     return (
         <>
-            <div className="bg-white p-10 rounded-md shadow-md flex flex-col">
+            <div className="bg-white p-10 rounded-t-md shadow-md flex flex-col">
                 <p>Be the first to discover exciting news, exclusive features, and game-changing</p> 
                 <p> updates from Realmlink. Join our community of enthusiasts and receive</p>
                 <p>timely notifications straight to your inbox.</p>
             </div>
-            <form onSubmit={handleSubmit} className="bg-white p-10 rounded-md shadow-md flex flex-col md:flex-row md:items-start">
+            <form onSubmit={handleSubmit} className="bg-white p-10 rounded-b-md shadow-md flex flex-col md:flex-row md:items-start">
                 <div className="mb-4 md:mb-0 md:mr-4">
                     <label htmlFor="email" className="block mb-2 text-gray-800">Email</label>
                     <input
