@@ -36,8 +36,8 @@ const Register: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email:</label>
+        <form onSubmit={handleSubmit} className="bg-white p-6 rounded-md shadow-md">
+            <label htmlFor="email" className="block mb-2 text-gray-800">Email:</label>
             <input
                 type="email"
                 id="email"
@@ -47,7 +47,7 @@ const Register: React.FC = () => {
                 required
             />
 
-            <label htmlFor="walletAddress">Wallet Address:</label>
+            <label htmlFor="walletAddress" className="block mb-2 text-gray-800">Wallet Address:</label>
             <input
                 type="text"
                 id="walletAddress"
@@ -55,6 +55,7 @@ const Register: React.FC = () => {
                 value={formData.walletAddress}
                 onChange={handleChange}
                 required
+                className="w-full p-2 border border-gray-300 rounded-mb mb-4"
             />
 
             <button type="submit">Submit</button>
