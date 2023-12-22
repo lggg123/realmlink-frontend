@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import React, { useState } from 'react';
 import WalletConnection from './components/buttons/WalletConnection'
 import Hero from './components/layout/Hero'
 import WhitepaperButton from './components/buttons/WhitepaperButton'
