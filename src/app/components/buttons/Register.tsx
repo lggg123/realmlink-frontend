@@ -63,7 +63,7 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
                 </div>
 
                 <div className="mb-7 md:mb-0">
-                    <label htmlFor="walletAddress" className="block mb-2 text-gray-800">Wallet Address</label>
+                    <label htmlFor="walletAddress" className="block mb-2 text-gray-800"></label>
                     <input
                         type="text"
                         id="walletAddress"
