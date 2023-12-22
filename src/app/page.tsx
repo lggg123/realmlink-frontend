@@ -7,6 +7,8 @@ import WhitepaperButton from './components/buttons/WhitepaperButton'
 import Register from './components/buttons/Register'
 
 export default function Home() {
+  const [walletAddress, setWalletAddress] = useState<string>("");
+
   const handleConnectWallet = (address: string) => {
     // Your logic for handling the wallet connection in the Home component
     setWalletAddress(address);
@@ -23,7 +25,7 @@ export default function Home() {
       
       <div className="flex flex-col items-center">
         <div className="mt-8">
-          <Register />
+          <Register walletAddress={walletAddress} />
         </div>
         <div className="mt-8">
           <WhitepaperButton />
