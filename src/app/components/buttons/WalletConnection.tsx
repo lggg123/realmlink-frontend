@@ -9,6 +9,7 @@ interface WindowWithEthereum extends Window {
 
 interface WalletConnectionProps {
     onConnectWallet: ( address: string ) => void;
+}
 
 const WalletConnection: React.FC<WalletConnectionProps> = ({ onConnectWallet }) => {
     // State variables for wallet connection status and address
