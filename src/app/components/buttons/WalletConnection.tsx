@@ -7,7 +7,10 @@ interface WindowWithEthereum extends Window {
     ethereum?: any;
 }
 
-const WalletConnection: React.FC = () => {
+interface WalletConnectionProps {
+    onConnectWallet: ( address: string ) => void;
+
+const WalletConnection: React.FC<WalletConnectionProps> = ({ onConnectWallet }) => {
     // State variables for wallet connection status and address
     const [connected, setConnected] = useState<boolean>(false);
     const [walletAddress, setWalletAddress] = useState<string>("");
@@ -24,6 +27,7 @@ const WalletConnection: React.FC = () => {
                 const _walletAddress = await signer.getAddress();
                 setConnected(true);
                 setWalletAddress(_walletAddress);
+                onConnectWallet(_walletAddress);
             } catch (error) {
                 console.error("Error connecting wallet:", error);
             }
