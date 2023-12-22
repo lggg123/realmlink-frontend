@@ -37,13 +37,6 @@ const WalletConnection: React.FC = () => {
         }
     };
 
-    useEffect(() => {
-        // Ensure the code runs only on the client side
-        if (typeof window !== 'undefined') {
-          connectWallet();
-        }
-      }, []);
-
     return(
         <div className="walletConnection">
             <button className={`btn ${connected ? 'btn-disconnect': 'btn-connect'} rounded-full`} onClick={connectWallet}>
