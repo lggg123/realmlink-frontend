@@ -1,9 +1,9 @@
-// updateAddress.tsx
+// UpdateAddress.tsx
 import React, { useState } from 'react';
 import WalletConnection from './WalletConnection';
 import Register from './Register';
 
-const updateAddress: React.FC = () => {
+const UpdateAddress: React.FC = () => {
   const [walletAddress, setWalletAddress] = useState<string>("");
 
   const handleConnectWallet = (address: string) => {
@@ -18,4 +18,4 @@ const updateAddress: React.FC = () => {
   );
 };
 
-export default updateAddress;
+export default UpdateAddress;
