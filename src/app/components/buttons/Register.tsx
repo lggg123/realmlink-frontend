@@ -29,7 +29,7 @@ const Register: React.FC = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(...formData, walletAddress),
+            body: JSON.stringify(formData, walletAddress),
         })
 
         // Handle the response from the server
