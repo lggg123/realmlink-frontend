@@ -23,13 +23,18 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        // Combine formData and walletAddress into a new object
+        const requestBody = {
+          ...formData,
+          walletAddress,
+        };
         // Add logic for form submission, e.g., sending data to a server
         const response = await fetch('http://localhost:5000/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData, walletAddress),
+            body: JSON.stringify(requestBody),
         })
 
         // Handle the response from the server
