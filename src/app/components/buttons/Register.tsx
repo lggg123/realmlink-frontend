@@ -1,15 +1,17 @@
 // components/Register.tsx
 import React, { useState } from 'react';
 
+interface RegisterProps {
+  walletAddress: string;
+}
+
 interface RegisterFormData {
     email: string;
-    walletAddress: string;
 }
 
 const Register: React.FC = () => {
     const [formData, setFormData] = useState<RegisterFormData>({
-        email: '',
-        walletAddress: ''
+        email: ''
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +29,7 @@ const Register: React.FC = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData),
+            body: JSON.stringify(...formData, walletAddress),
         })
 
         // Handle the response from the server
@@ -61,10 +63,11 @@ const Register: React.FC = () => {
                         type="text"
                         id="walletAddress"
                         name="walletAddress"
-                        value={formData.walletAddress}
+                        value={walletAddress}
                         onChange={handleChange}
-                        required
-                        className="w-full p-2 border border-gray-300 rounded-md" />
+                        readOnly
+                        style={{ display: 'none' }}
+                    />
                 </div>
                 <button type="submit" className="bg-blue-500 text-white rounded-md p-2 hover:bg-blue-600 transition duration-300 mt-8 md:ml-4">Submit</button>
             </form>
