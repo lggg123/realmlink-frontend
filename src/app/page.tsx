@@ -8,7 +8,7 @@ import Register from './components/buttons/Register'
 
 export default function Home() {
   return (
-    <main className="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <main className="bg-gray-900 min-h-screen flex flex-col items-center justify-center">
       <div className="mb-8">
         <div className="">
           <WalletConnection />

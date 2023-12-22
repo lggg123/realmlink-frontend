@@ -47,7 +47,7 @@ const WalletConnection: React.FC = () => {
     return(
         <div className="walletConnection">
             <button className={`btn ${connected ? 'btn-disconnect': 'btn-connect'} rounded-full`} onClick={connectWallet}>
-                <img src="/metamask-logo.png" alt="Metamask Logo" className="mr-2 w-6 h-6" />
+                <img src="/metamask.png" alt="Metamask Logo" className="mr-2 w-6 h-6" />
                 {connected ? "Disconnect Wallet": "Connect Wallet"}
             </button>
             {connected && (
