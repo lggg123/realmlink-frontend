@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
     });
 
     return (
-        <section className={`bg-gray-900 text-white py-16 text-center`}>
+        <section className={`bg-gray-900 text-white py-16 text-center rounded-md`}>
             <animated.div style={fadeIn} className={`max-w-2xl mx-auto`}>
                 <h1>Welcome to RealmLink</h1>
                 <p className={`mb-2`}>Where your virtual adventures transcend boundaries!</p>

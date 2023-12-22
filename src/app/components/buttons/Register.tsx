@@ -36,29 +36,33 @@ const Register: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="bg-white p-6 rounded-md shadow-md">
-            <label htmlFor="email" className="block mb-2 text-gray-800">Email:</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-            />
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-md shadow-md flex flex-col md:flex-row md:items-start">
+            <div className="mb-4 md:mb-0 md:mr-4">
+                <label htmlFor="email" className="block mb-2 text-gray-800">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full p-2 border border-gray-300"
+                />
+            </div>
 
-            <label htmlFor="walletAddress" className="block mb-2 text-gray-800">Wallet Address:</label>
-            <input
-                type="text"
-                id="walletAddress"
-                name="walletAddress"
-                value={formData.walletAddress}
-                onChange={handleChange}
-                required
-                className="w-full p-2 border border-gray-300 rounded-mb mb-4"
-            />
-
-            <button type="submit">Submit</button>
+            <div className="mb-7 md:mb-0">
+                <label htmlFor="walletAddress" className="block mb-2 text-gray-800">Wallet Address</label>
+                <input
+                    type="text"
+                    id="walletAddress"
+                    name="walletAddress"
+                    value={formData.walletAddress}
+                    onChange={handleChange}
+                    required
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                />
+            </div>
+            <button type="submit" className="bg-blue-500 text-white rounded-md p-2 hover:bg-blue-600 transition duration-300 mt-8 md:ml-4">Submit</button>
         </form>
     );
 };
