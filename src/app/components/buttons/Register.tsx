@@ -9,7 +9,7 @@ interface RegisterFormData {
     email: string;
 }
 
-const Register: React.FC = () => {
+const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
     const [formData, setFormData] = useState<RegisterFormData>({
         email: ''
     });
