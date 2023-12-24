@@ -44,14 +44,14 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
 
     return (
         <>
-            <div className="bg-white p-10 rounded-t-md shadow-md flex flex-col">
+            <div className="bg-zinc-950 text-white p-10 rounded-t-md shadow-md flex flex-col">
                 <p>Be the first to discover exciting news, exclusive features, and game-changing</p> 
                 <p> updates from Realmlink. Join our community of enthusiasts and receive</p>
                 <p>timely notifications straight to your inbox.</p>
             </div>
-            <form onSubmit={handleSubmit} className="bg-white p-10 rounded-b-md shadow-md flex flex-col md:flex-row md:items-start">
+            <form onSubmit={handleSubmit} className="bg-zinc-950 p-10 rounded-b-md shadow-md flex flex-col md:flex-row md:items-start">
                 <div className="mb-4 md:mb-0 md:mr-4">
-                    <label htmlFor="email" className="block mb-2 text-gray-800">Email</label>
+                    <label htmlFor="email" className="block mb-2 text-white">Email</label>
                     <input
                         type="email"
                         id="email"
@@ -74,7 +74,7 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
                         style={{ display: 'none' }}
                     />
                 </div>
-                <button type="submit" className="bg-blue-500 text-white rounded-md p-2 hover:bg-blue-600 transition duration-300 mt-8 md:ml-4">Submit</button>
+                <button type="submit" className="bg-zinc-600 text-white rounded-md p-2 hover:bg-zinc-300 transition duration-300 mt-8 md:ml-4">Submit</button>
             </form>
         </>
     );
