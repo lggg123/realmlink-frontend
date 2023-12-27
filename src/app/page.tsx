@@ -17,7 +17,7 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-gray-900 min-h-screen flex flex-col items-center justify-center">
+    <main className="bg-zinc-900 min-h-screen flex flex-col items-center justify-center">
       <div className="mb-8">
         <div className="">
           <WalletConnection onConnectWallet={handleConnectWallet} />
