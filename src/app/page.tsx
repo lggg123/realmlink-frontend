@@ -6,6 +6,7 @@ import WalletConnection from './components/buttons/WalletConnection'
 import Hero from './components/layout/Hero'
 import WhitepaperButton from './components/buttons/WhitepaperButton'
 import Register from './components/buttons/Register'
+import CoreValues from './components/layout/CoreValues';
 
 export default function Home() {
   const [walletAddress, setWalletAddress] = useState<string>("");
@@ -23,7 +24,7 @@ export default function Home() {
         </div>
       </div>
       <Hero />
-      
+      <CoreValues />
       <div className="flex flex-col items-center">
         <div className="mt-8">
           <Register walletAddress={walletAddress} />
