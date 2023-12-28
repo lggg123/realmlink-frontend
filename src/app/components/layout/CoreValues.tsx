@@ -1,32 +1,67 @@
 // components/layout/CoreValues.tsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useSpring, animated, config } from 'react-spring';
+import { useInView } from 'react-intersection-observer';
 
 const CoreValues: React.FC = () => {
+  const [ref1, inView1] = useInView({ triggerOnce: true });
+  const fadeInCoreValues1 = useSpring({
+    opacity: inView1 ? 1 : 0,
+    from: { opacity: 0 },
+    config: { duration: 1000 },
+  });
+
+  const [ref2, inView2] = useInView({ triggerOnce: true });
+  const fadeInCoreValues2 = useSpring({
+    opacity: inView2 ? 1 : 0,
+    from: { opacity: 0 },
+    config: { duration: 1000 },
+  });
+
+  const [ref3, inView3] = useInView({ triggerOnce: true });
+  const fadeInCoreValues3 = useSpring({
+    opacity: inView3 ? 1 : 0,
+    from: { opacity: 0 },
+    config: { duration: 1000 },
+  });
+
+  const [ref4, inView4] = useInView({ triggerOnce: true });
+  const fadeInCoreValues4 = useSpring({
+    opacity: inView4 ? 1 : 0,
+    from: { opacity: 0 },
+    config: { duration: 1000 },
+  });
+
+  console.log("inView1:", inView1);
+  console.log("inView2:", inView2);
+  console.log("inView3:", inView3);
+  console.log("inView4:", inView4);
+
   return (
-    <section className="flex flex-wrap justify-center mt-8">
+    <section className="flex flex-col text-white justify-center mt-8">
       {/* Core Value 1 */}
-      <div className="m-4">
-        <Image src="/core-value-1.jpg" alt="Core Value 1" width={200} height={200} />
-        <p>Freedom</p>
+      <div className={`m-8`}>
+        <h1 className={`text-4xl text-center font-bold mb-8`}>Freedom</h1>
+        <Image src="/freedom.png" alt="Core Value 1" width={700} height={700} />
       </div>
 
       {/* Core Value 2 */}
-      <div className="m-4">
-        <Image src="/core-value-2.jpg" alt="Core Value 2" width={200} height={200} />
-        <p>Community</p>
+      <div className={`m-8`}>
+      <h1 className={`text-4xl text-center font-bold mb-20`}>Community</h1>
+        <Image src="/community.png" alt="Core Value 2" width={700} height={700} />
       </div>
 
       {/* Core Value 3 */}
-      <div className="m-4">
-        <Image src="/core-value-3.jpg" alt="Core Value 3" width={200} height={200} />
-        <p>Innovation</p>
+      <div className={`m-8`}>
+      <h1 className={`text-4xl text-center font-bold mb-20`}>Innovation</h1>
+        <Image src="/innovation.png" alt="Core Value 3" width={700} height={700} />
       </div>
 
       {/* Core Value 4 */}
-      <div className="m-4">
-        <Image src="/core-value-4.jpg" alt="Core Value 4" width={200} height={200} />
-        <p>Immersion</p>
+      <div className={`m-8`}>
+      <h1 className={`text-4xl text-center font-bold mb-20`}>Immersion</h1>
+        <Image src="/immersion.png" alt="Core Value 4" width={700} height={700} />
       </div>
     </section>
   );

@@ -24,8 +24,8 @@ export default function Home() {
         </div>
       </div>
       <Hero />
-      <CoreValues />
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mt-8">
+        <CoreValues />
         <div className="mt-8">
           <Register walletAddress={walletAddress} />
         </div>
