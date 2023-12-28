@@ -6,14 +6,14 @@ import Register from '../buttons/Register';
 
 describe('Register Component', () => {
     test('renders Register component with form fields', () => {
-        render(<Register />);
+        render(<Register walletAddress={''} />);
         expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/wallet address/i)).toBeInTheDocument();
         expect(screen.getByRole('button', { name: /submit/i })).toBeInTheDocument();
     });
 
     test('allows users to enter email and wallet address', () => {
-        render(<Register />);
+        render(<Register walletAddress={''} />);
         const emailInput = screen.getByLabelText(/email/i);
         const walletInput = screen.getByLabelText(/wallet address/i);
 
@@ -25,7 +25,7 @@ describe('Register Component', () => {
     })
 
     test('submits the form with valid data', async () => {
-        render(<Register />);
+        render(<Register walletAddress={''} />);
 
         // Mock the fetch function
         global.fetch = jest.fn().mockResolvedValueOnce({
@@ -42,7 +42,7 @@ describe('Register Component', () => {
         });
 
         // Expect fetch to be called with the correct data
-        expect(global.fetch).toHaveBeenCalledWith('http://localhost:5000/api/register', {
+        expect(global.fetch).toHaveBeenCalledWith('http://realmlink-backend-production.up.railway.app/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
