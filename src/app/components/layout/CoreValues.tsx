@@ -55,13 +55,13 @@ const CoreValues: React.FC = () => {
       {/* Core Value 3 */}
       <div className={`m-8`}>
       <h1 className={`text-4xl text-center font-bold mb-20`}>Innovation</h1>
-        <Image src="/innovation.png" alt="Core Value 3" width={700} height={700} />
+        <Image src="/Innovation.png" alt="Core Value 3" width={700} height={700} />
       </div>
 
       {/* Core Value 4 */}
       <div className={`m-8`}>
       <h1 className={`text-4xl text-center font-bold mb-20`}>Immersion</h1>
-        <Image src="/immersion.png" alt="Core Value 4" width={700} height={700} />
+        <Image src="/Immersion.png" alt="Core Value 4" width={700} height={700} />
       </div>
     </section>
   );
