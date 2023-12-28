@@ -33,35 +33,30 @@ const CoreValues: React.FC = () => {
     config: { duration: 1000 },
   });
 
-  console.log("inView1:", inView1);
-  console.log("inView2:", inView2);
-  console.log("inView3:", inView3);
-  console.log("inView4:", inView4);
-
   return (
-    <section className="flex flex-col text-white justify-center mt-8">
+    <section className="flex flex-col text-white justify-center">
       {/* Core Value 1 */}
       <div className={`m-8`}>
         <h1 className={`text-4xl text-center font-bold mb-8`}>Freedom</h1>
-        <Image src="/freedom.png" alt="Core Value 1" width={700} height={700} />
+        <Image src="/freedom.png" alt="Core Value 1" width={630} height={630} />
       </div>
 
       {/* Core Value 2 */}
       <div className={`m-8`}>
       <h1 className={`text-4xl text-center font-bold mb-20`}>Community</h1>
-        <Image src="/community.png" alt="Core Value 2" width={700} height={700} />
+        <Image src="/community.png" alt="Core Value 2" width={630} height={630} />
       </div>
 
       {/* Core Value 3 */}
       <div className={`m-8`}>
       <h1 className={`text-4xl text-center font-bold mb-20`}>Innovation</h1>
-        <Image src="/Innovation.png" alt="Core Value 3" width={700} height={700} />
+        <Image src="/Innovation.png" alt="Core Value 3" width={630} height={630} />
       </div>
 
       {/* Core Value 4 */}
       <div className={`m-8`}>
       <h1 className={`text-4xl text-center font-bold mb-20`}>Immersion</h1>
-        <Image src="/Immersion.png" alt="Core Value 4" width={700} height={700} />
+        <Image src="/Immersion.png" alt="Core Value 4" width={630} height={630} />
       </div>
     </section>
   );
