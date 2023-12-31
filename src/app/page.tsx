@@ -79,7 +79,7 @@ export default function Home() {
           <CSuiteTeam csuite={cSuiteData} />
         </div>
         <div className="mt-8">
-        <h1 className="text-gray-300 text-4xl font-bold mb-8">Team To Be Hired - Business Developers</h1>
+        <h1 className="text-gray-300 text-4xl font-bold mb-8 text-center">Team To Be Hired - Business Developers</h1>
           <BusinessD bdTeam={bdData} />
         </div>
         <div className="mt-8">
