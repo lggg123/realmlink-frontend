@@ -6,7 +6,6 @@ interface Founder {
     name: string;
     photo: string;
     title: string;
-    description: string;
 }
 
 interface FoundersProps {
@@ -22,7 +21,6 @@ const Founders: React.FC<FoundersProps> = ({ founders }) => {
                     <div className="text-sm ml-2">
                         <h3 className="text-gray-400 text-lg">{founder.title}</h3>
                         <h4 className="text-gray-500 text-xl font-bold">{founder.name}</h4>
-                        <p className="text-gray-400">{founder.description}</p>
                     </div>
                 </div>
             ))}
