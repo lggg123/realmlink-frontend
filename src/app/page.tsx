@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import WalletConnection from './components/buttons/WalletConnection'
 import Hero from './components/layout/Hero'
 import WhitepaperButton from './components/buttons/WhitepaperButton'
@@ -20,6 +20,8 @@ import { managementData } from './components/data/managementData';
 import GrowthTeam from './components/layout/Growth';
 import { growthData } from './components/data/growthData';
 import { cSuiteData } from './components/data/cSuiteData';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Home() {
   const foundersData = [
@@ -33,6 +35,10 @@ export default function Home() {
     setWalletAddress(address);
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <main className="bg-zinc-900 min-h-screen flex flex-col items-center justify-center">
       <div className="mb-8">
@@ -42,8 +48,18 @@ export default function Home() {
       </div>
       <Hero />
       <div className="flex flex-col items-center mt-8">
-        <CoreValues />
-        <div className="mt-8">
+        <div data-aos="fade-in"
+          data-aos-delay="300"
+          data-aos-offset="50"
+          data-aos-duration="1000"  // You can adjust the duration as needed
+          data-aos-easing="ease-in-out" >
+          <CoreValues />
+        </div>
+        <div data-aos="fade-in"
+        data-aos-delay="300"
+        data-aos-offset="50"
+        data-aos-duration="1000"  // You can adjust the duration as needed
+        data-aos-easing="ease-in-out" className="mt-8">
           <h1 className="text-gray-300 text-4xl font-bold mb-8 text-center">Meet the Founders</h1>
           <Founders founders={foundersData} />
         </div>
@@ -51,7 +67,14 @@ export default function Home() {
         <h1 className="text-gray-300 text-4xl font-bold mb-8">Meet the Advisors</h1>
           <Advisors advisors={advisorsData} />
         </div>
-        <div className="mt-8">
+        <div data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center" className="mt-8">
         <h1 className="text-gray-300 text-4xl font-bold mb-8">Team To Be Hired - CSuite</h1>
           <CSuiteTeam csuite={cSuiteData} />
         </div>
