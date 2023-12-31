@@ -36,12 +36,15 @@ export default function Home() {
       <div className="flex flex-col items-center mt-8">
         <CoreValues />
         <div className="mt-8">
+          <h1 className="text-gray-300 text-4xl font-bold mb-2">Meet the Founders</h1>
           <Founders founders={foundersData} />
         </div>
         <div className="mt-8">
+        <h1 className="text-gray-300 text-4xl font-bold mb-8">Meet the Advisors</h1>
           <Advisors advisors={advisorsData} />
         </div>
         <div className="mt-8">
+        <h1 className="text-gray-300 text-4xl font-bold mb-8">Team To Be Hired</h1>
           <EmployedTeam employedTeam={employedTeamData} />
         </div>
         <div className="mt-8">
