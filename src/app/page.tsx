@@ -9,9 +9,17 @@ import Register from './components/buttons/Register'
 import CoreValues from './components/layout/CoreValues';
 import Founders from './components/layout/Founders';
 import Advisors from './components/layout/Advisors';
-import EmployedTeam from './components/layout/EmployedTeam';
 import { advisorsData } from './components/data/advisorsData';
-import { employedTeamData } from './components/data/EmployedTeamData';
+import BusinessD from './components/layout/BD';
+import { bdData } from './components/data/bdData';
+import CSuiteTeam from './components/layout/CSuite';
+import Developers from './components/layout/Developers';
+import { developersData } from './components/data/developersData';
+import ManagementTeam from './components/layout/Management';
+import { managementData } from './components/data/managementData';
+import GrowthTeam from './components/layout/Growth';
+import { growthData } from './components/data/growthData';
+import { cSuiteData } from './components/data/cSuiteData';
 
 export default function Home() {
   const foundersData = [
@@ -36,7 +44,7 @@ export default function Home() {
       <div className="flex flex-col items-center mt-8">
         <CoreValues />
         <div className="mt-8">
-          <h1 className="text-gray-300 text-4xl font-bold mb-2">Meet the Founders</h1>
+          <h1 className="text-gray-300 text-4xl font-bold mb-8 text-center">Meet the Founders</h1>
           <Founders founders={foundersData} />
         </div>
         <div className="mt-8">
@@ -44,8 +52,24 @@ export default function Home() {
           <Advisors advisors={advisorsData} />
         </div>
         <div className="mt-8">
-        <h1 className="text-gray-300 text-4xl font-bold mb-8">Team To Be Hired</h1>
-          <EmployedTeam employedTeam={employedTeamData} />
+        <h1 className="text-gray-300 text-4xl font-bold mb-8">Team To Be Hired - CSuite</h1>
+          <CSuiteTeam csuite={cSuiteData} />
+        </div>
+        <div className="mt-8">
+        <h1 className="text-gray-300 text-4xl font-bold mb-8">Team To Be Hired - Business Developers</h1>
+          <BusinessD bdTeam={bdData} />
+        </div>
+        <div className="mt-8">
+        <h1 className="text-gray-300 text-4xl font-bold mb-8">Team To Be Hired - Developers</h1>
+          <Developers developers={developersData} />
+        </div>
+        <div className="mt-8">
+        <h1 className="text-gray-300 text-4xl font-bold mb-8">Team To Be Hired - Managment/Relations</h1>
+          <ManagementTeam management={managementData} />
+        </div>
+        <div className="mt-8">
+        <h1 className="text-gray-300 text-4xl font-bold mb-8">Team To Be Hired - Community/Growth</h1>
+          <GrowthTeam growthTeam={growthData} />
         </div>
         <div className="mt-8">
           <Register walletAddress={walletAddress} />

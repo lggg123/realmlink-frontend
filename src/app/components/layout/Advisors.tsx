@@ -6,7 +6,6 @@ interface Advisor {
     name: string;
     photo: string;
     title: string;
-    description: string;
 }
 
 interface AdvisorsProps {
@@ -15,14 +14,13 @@ interface AdvisorsProps {
 
 const Advisors: React.FC<AdvisorsProps> = ({ advisors }) => {
     return (
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-3 gap-4">
             {advisors.map((advisor, index) => (
                 <div key={index} className="flex flex-row items-center">
                     <Image src={advisor.photo} alt={advisor.name} width={200} height={200} />
                     <div className="text-gray-400 text-sm ml-2">
                         <h3 className="text-lg">{advisor.title}</h3>
                         <h4 className="text-base font-bold">{advisor.name}</h4>
-                        <p>{advisor.description}</p>
                     </div>
                 </div>
             ))}
