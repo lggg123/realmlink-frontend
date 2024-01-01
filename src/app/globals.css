@@ -155,3 +155,11 @@ nav {
     grid-template-columns: repeat(6, 1fr);
   }
 }
+
+.image-container {
+  position: relative;
+  width: 150px; /* Fixed width for the image container */
+  height: 150px; /* Fixed height for the image container */
+  border-radius: 50%; /* Makes the image round */
+  overflow: hidden; /* Ensures images don't overflow the container */
+}

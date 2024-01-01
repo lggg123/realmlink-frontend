@@ -21,13 +21,11 @@ const Advisors: React.FC<AdvisorsProps> = ({ advisors }) => {
             <Image
               src={advisor.photo}
               alt={advisor.name}
-              layout='responsive' // Or "fill" depending on your use case
-              width={150} // Use your specific size
-              height={150} // Maintain the aspect ratio
+              layout='fill' // Use 'fill' to cover the container
+              objectFit='cover' // Ensures the image covers the area without stretching
               className='rounded-full'
             />
           </div>
-          <div className='text-spacer'></div> {/* Spacer div */}
           <div className='advisor-text'>
             <h4 className='advisor-name text-xl font-bold text-gray-500'>
               {advisor.name}
