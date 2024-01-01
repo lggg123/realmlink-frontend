@@ -1,31 +1,43 @@
 // Advisors.tsx
-import React from 'react';
-import Image from 'next/image';
+import React from 'react'
+import Image from 'next/image'
 
 interface Advisor {
-    name: string;
-    photo: string;
-    title: string;
+  name: string
+  photo: string
+  title: string
 }
 
 interface AdvisorsProps {
-    advisors: Advisor[];
+  advisors: Advisor[]
 }
 
 const Advisors: React.FC<AdvisorsProps> = ({ advisors }) => {
-    return (
-        <div className="grid grid-cols-3 gap-4">
-            {advisors.map((advisor, index) => (
-                <div key={index} className="flex flex-row items-center">
-                    <Image src={advisor.photo} alt={advisor.name} width={200} height={200} />
-                    <div className="text-gray-400 text-sm ml-2">
-                        <h3 className="text-lg">{advisor.title}</h3>
-                        <h4 className="text-base font-bold">{advisor.name}</h4>
-                    </div>
-                </div>
-            ))}
+  return (
+    <div className='advisors-grid'>
+      {advisors.map((advisor, index) => (
+        <div key={index} className='advisor-card'>
+          <div className='image-container'>
+            <Image
+              src={advisor.photo}
+              alt={advisor.name}
+              layout='responsive' // Or "fill" depending on your use case
+              width={150} // Use your specific size
+              height={150} // Maintain the aspect ratio
+              className='rounded-full'
+            />
+          </div>
+          <div className='text-spacer'></div> {/* Spacer div */}
+          <div className='advisor-text'>
+            <h4 className='advisor-name text-xl font-bold text-gray-500'>
+              {advisor.name}
+            </h4>
+            <p className='advisor-title text-gray-400'>{advisor.title}</p>
+          </div>
         </div>
-    );
-};
+      ))}
+    </div>
+  )
+}
 
-export default Advisors;
+export default Advisors
