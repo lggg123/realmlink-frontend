@@ -16,11 +16,11 @@ const Footer: React.FC = () => {
             Twitter
           </a>
           <a
-            href='https://facebook.com/yourpage'
+            href='https://discord.gg/W3K47RnVAx'
             target='_blank'
             rel='noopener noreferrer'
           >
-            Facebook
+            Discord
           </a>
           <a
             href='https://instagram.com/yourhandle'

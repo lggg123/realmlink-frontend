@@ -1,0 +1,172 @@
+/* Advisor Card Styles */
+.advisors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+  
+  .advisor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .advisor-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .advisor-name,
+  .advisor-title {
+    text-align: center;
+    margin: 0;
+  }
+  
+  .advisor-name {
+    height: 3em;
+  }
+  
+  .advisor-title {
+    height: 1.5em;
+  }
+  
+  @media (min-width: 600px) {
+    .advisors-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .advisors-grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+  
+  /* Image Container for Advisors */
+  .image-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  /* Flip Card Styles */
+  .flip-card-container {
+    perspective: 1000px;
+    width: var(--card-width-small);
+    max-width: md;
+    height: 250px;
+    margin: auto; /* Adjust margin as needed */
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-right: 300px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 1rem;
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    padding: 4rem;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5rem;
+    overflow: hidden;
+  }
+  
+  .flip-card-front {
+    background: linear-gradient(
+      145deg,
+      rgba(var(--card-bg-start), 1),
+      rgba(var(--card-bg-end), 1)
+    );
+  }
+  
+  .flip-card-back {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-container:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Responsive Adjustments for Flip Cards */
+  @media (max-width: 768px) {
+    .flip-card-container {
+      width: var(--card-width-small); /* Adjust width for smaller screens */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .flip-card-container {
+      width: calc(50% - 2rem); /* Adjust width for 2 cards per row */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .flip-card-container {
+      width: calc(50% - 2rem); /* Maintain 2 cards per row on larger screens */
+    }
+
+    .core-value {
+        flex-basis: 25%; /* Four columns on desktop */
+      }
+  }
+  
+
+  /* Core Values Styles */
+.core-values-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 4rem;
+    padding-top: 100px; 
+  }
+  
+  .core-value {
+    flex-basis: calc(50% - 1rem); /* Adjust for two items per row, accounting for some margin */
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin: 0.5rem; /* Adjust margin as needed */
+  }
+  .core-value img {
+    display: block; /* Makes the image a block-level element */
+    margin-left: auto;
+    margin-right: auto;
+    /* Optionally, you can also use text-align for the parent container */
+  }
+  
+  @media (min-width: 768px) {
+    .core-value {
+      flex-basis: calc(33.33% - 1rem); /* Three columns on tablet */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .core-value {
+      flex-basis: calc(25% - 1rem); /* Four columns on desktop */
+    }
+  }
+  

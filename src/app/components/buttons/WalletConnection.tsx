@@ -23,6 +23,12 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
   const connectWallet = async () => {
     const { ethereum } = window as WindowWithEthereum
 
+    if (!ethereum) {
+      alert(
+        'Install metamask & if on mobile view this page through the metamask mobile app browser'
+      )
+    }
+
     if (!connected && ethereum) {
       // Connect the wallet using ethers.js
       try {
@@ -56,14 +62,16 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
         <Image
           src='/metamask.png'
           alt='Metamask Logo'
+          width={16} // Added width
+          height={16} // Added height
           className='mr-2 w-6 h-6'
         />
         {connected ? 'Disconnect Wallet' : 'Connect Wallet'}
       </button>
       {connected && (
         <div>
-          <h3>Address</h3>
-          <h4 className='wal-add'>{walletAddress}</h4>
+          <h3 className='text-gray-500'>Address</h3>
+          <h4 className='wal-add text-gray-500'>{walletAddress}</h4>
         </div>
       )}
     </div>

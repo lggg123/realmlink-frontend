@@ -17,6 +17,11 @@ import { managementData } from './components/data/managementData'
 import { growthData } from './components/data/growthData'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
+import JoinCommunitySection from './components/layout/JoinCommunity'
+import BenefitsForBuilders from './components/layout/BenefitsForBuilders'
+import BenefitsForGamers from './components/layout/BenefitsForGamers'
+import FeaturesSection from './components/layout/FeaturesSection'
+import IntroductionSection from './components/layout/IntroductionSection'
 
 export default function Home () {
   const foundersData = [
@@ -46,6 +51,15 @@ export default function Home () {
       <Header />
       <main className='bg-zinc-900 min-h-screen flex flex-col items-center justify-center'>
         <Hero />
+        {/* <IntroductionSection /> */}
+        <div className='combined-sections'>
+          <FeaturesSection />
+          <BenefitsForGamers />
+        </div>
+        <div className='combined-sections'>
+          <BenefitsForBuilders />
+          <JoinCommunitySection />
+        </div>
         <div id='about' className='flex flex-col items-center mt-8'>
           <CoreValues />
         </div>
@@ -62,6 +76,7 @@ export default function Home () {
           <TeamSection teamType='Community/Growth' teamMembers={growthData} />
         </div>
         <div id='contact' className='flex flex-col items-center mt-8'>
+          <WalletConnection onConnectWallet={handleConnectWallet} />
           <Register walletAddress={walletAddress} />
           <WhitepaperButton />
         </div>

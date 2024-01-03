@@ -1,0 +1,63 @@
+/* Example custom utility classes */
+
+/* Margin and Padding Utilities */
+.m-1 { margin: 0.25rem; }
+.p-1 { padding: 0.25rem; }
+.mx-1 { margin-right: 0.25rem; margin-left: 0.25rem; }
+.my-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.px-1 { padding-right: 0.25rem; padding-left: 0.25rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+
+/* Text Utilities */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+
+/* Display Utilities */
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-none { display: none; }
+
+/* Flex Utilities */
+.flex-row { flex-direction: row; }
+.flex-column { flex-direction: column; }
+.justify-center { justify-content: center; }
+.align-center { align-items: center; }
+
+/* Example of a custom button utility */
+.btn-custom {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.btn-custom:hover {
+  background-color: #0056b3;
+}
+
+.container-narrow {
+    max-width: 640px;
+  }
+  
+  .container-wide {
+    max-width: 1280px;
+  }
+  
+  /* Custom animation classes */
+  .fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }

@@ -1,83 +1,117 @@
 // components/Register.tsx
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 interface RegisterProps {
-  walletAddress: string;
+  walletAddress: string
 }
 
 interface RegisterFormData {
-    email: string;
+  email: string
 }
 
 const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
-    const [formData, setFormData] = useState<RegisterFormData>({
-        email: ''
-    });
+  const [formData, setFormData] = useState<RegisterFormData>({
+    email: ''
+  })
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
 
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        // Combine formData and walletAddress into a new object
-        const requestBody = {
-          ...formData,
-          walletAddress,
-        };
-        // Add logic for form submission, e.g., sending data to a server
-        const response = await fetch('http://realmlink-backend-production.up.railway.app/api/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(requestBody),
-        })
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
 
-        // Handle the response from the server
-        const data = await response.json();
-        console.log(data);
-    };
+    // Check if the wallet address is empty
+    if (!walletAddress) {
+      alert('Please connect your wallet first.')
+      return
+    }
 
-    return (
-        <>
-            <div className="bg-zinc-950 text-white p-6 rounded-t-md shadow-md flex flex-col">
-                <p>Be the first to discover exciting news, exclusive features, and game-changing</p> 
-                <p> updates from Realmlink. Join our community of enthusiasts and receive</p>
-                <p>timely notifications straight to your inbox.</p>
-            </div>
-            <form onSubmit={handleSubmit} className="bg-zinc-950 p-6 rounded-b-md shadow-md flex flex-col md:flex-row md:items-start">
-                <div className="mb-4 md:mb-0 md:mr-4">
-                    <label htmlFor="email" className="block mb-2 text-white">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full p-2 border border-gray-300" />
-                </div>
+    // Combine formData and walletAddress into a new object
+    const requestBody = {
+      ...formData,
+      walletAddress
+    }
 
-                <div className="mb-7 md:mb-0">
-                    <label htmlFor="walletAddress" className="block mb-2 text-gray-800"></label>
-                    <input
-                        type="text"
-                        id="walletAddress"
-                        name="walletAddress"
-                        value={walletAddress}
-                        onChange={handleChange}
-                        readOnly
-                        style={{ display: 'none' }}
-                    />
-                </div>
-                <button type="submit" className="bg-zinc-600 text-white rounded-md p-2 hover:bg-zinc-300 transition duration-300 mt-8 md:ml-4">Submit</button>
-            </form>
-        </>
-    );
-};
+    // Add logic for form submission, e.g., sending data to a server
+    const response = await fetch(
+      'http://realmlink-backend-production.up.railway.app/api/register',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+      }
+    )
 
-export default Register;
+    // Handle the response from the server
+    const data = await response.json()
+    console.log(data)
+  }
+
+  return (
+    <>
+      <div className='bg-zinc-950 text-white p-6 rounded-t-md shadow-md flex flex-col'>
+        <p>
+          Be the first to discover exciting news, exclusive features, and
+          game-changing
+        </p>
+        <p>
+          {' '}
+          updates from Realmlink. Join our community of enthusiasts and receive
+        </p>
+        <p>
+          timely notifications straight to your inbox. We'll also be airdropping
+          to those that register in the first 6 months.
+        </p>
+      </div>
+      <form
+        onSubmit={handleSubmit}
+        className='bg-zinc-950 p-6 rounded-b-md shadow-md flex flex-col md:flex-row md:items-start'
+      >
+        <div className='mb-4 md:mb-0 md:mr-4'>
+          <label htmlFor='email' className='block mb-2 text-white'>
+            Email
+          </label>
+          <input
+            type='email'
+            id='email'
+            name='email'
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className='w-full p-2 border border-gray-300'
+          />
+        </div>
+
+        <div className='mb-7 md:mb-0'>
+          <label
+            htmlFor='walletAddress'
+            className='block mb-2 text-gray-800'
+          ></label>
+          <input
+            type='text'
+            id='walletAddress'
+            name='walletAddress'
+            value={walletAddress}
+            onChange={handleChange}
+            readOnly
+            style={{ display: 'none' }}
+          />
+        </div>
+        <button
+          type='submit'
+          className='bg-zinc-600 text-white rounded-md p-2 hover:bg-zinc-300 transition duration-300 mt-8 md:ml-4'
+        >
+          Submit
+        </button>
+      </form>
+    </>
+  )
+}
+
+export default Register
