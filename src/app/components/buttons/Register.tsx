@@ -38,7 +38,7 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
 
     // Add logic for form submission, e.g., sending data to a server
     const response = await fetch(
-      'http://realmlink-backend-production.up.railway.app/api/register',
+      'https://realmlink-backend-production.up.railway.app/api/register',
       {
         method: 'POST',
         headers: {
