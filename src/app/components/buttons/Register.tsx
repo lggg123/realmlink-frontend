@@ -65,8 +65,8 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
           updates from Realmlink. Join our community of enthusiasts and receive
         </p>
         <p>
-          timely notifications straight to your inbox. We'll also be airdropping
-          to those that register in the first 6 months.
+          timely notifications straight to your inbox. We&apos;ll also be
+          airdropping to those that register in the first 6 months.
         </p>
       </div>
       <form

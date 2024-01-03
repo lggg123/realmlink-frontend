@@ -1,6 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, ReactNode } from 'react'
 
-function FlipCard ({ title, children }) {
+interface FlipCardProps {
+  title: string // assuming title is of type string
+  children: ReactNode // ReactNode is a type that covers anything that can be rendered: numbers, strings, elements or an array of these
+}
+
+function FlipCard ({ title, children }: FlipCardProps) {
   const [isFlipped, setIsFlipped] = useState(false)
 
   const handleFlip = () => {
