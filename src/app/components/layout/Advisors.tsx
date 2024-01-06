@@ -21,6 +21,8 @@ const Advisors: React.FC<AdvisorsProps> = ({ advisors }) => {
             <Image
               src={advisor.photo}
               alt={advisor.name}
+              //   width={200}
+              //   height={200}
               layout='fill' // Use 'fill' to cover the container
               objectFit='cover' // Ensures the image covers the area without stretching
               className='rounded-full'

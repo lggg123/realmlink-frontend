@@ -65,7 +65,6 @@ export default function Home () {
         </div>
         <div id='team' className='flex flex-col items-center mt-8'>
           <Founders founders={foundersData} />
-          <Advisors advisors={advisorsData} />
           <TeamSection teamType='CSuite' teamMembers={cSuiteData} />
           <TeamSection teamType='Business Developers' teamMembers={bdData} />
           <TeamSection teamType='Developers' teamMembers={developersData} />
@@ -74,6 +73,7 @@ export default function Home () {
             teamMembers={managementData}
           />
           <TeamSection teamType='Community/Growth' teamMembers={growthData} />
+          <Advisors advisors={advisorsData} />
         </div>
         <div id='contact' className='flex flex-col items-center mt-8'>
           <WalletConnection onConnectWallet={handleConnectWallet} />

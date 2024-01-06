@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <p className='mt-2'>Follow us on social media:</p>
         <div className='flex justify-center mt-2 gap-4'>
           <a
-            href='https://twitter.com/yourhandle'
+            href='https://twitter.com/RealmLink_Infra'
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -23,11 +23,11 @@ const Footer: React.FC = () => {
             Discord
           </a>
           <a
-            href='https://instagram.com/yourhandle'
+            href='https://t.me/+BZqWjNfu9Bk2ZjZk'
             target='_blank'
             rel='noopener noreferrer'
           >
-            Instagram
+            Telegram
           </a>
         </div>
       </div>
