@@ -27,7 +27,7 @@ export const PrivacyPolicyPopup = () => {
         <p>
           We use cookies to enhance your experience. By continuing to visit this
           site you agree to our use of cookies.
-          <Link href='privacypolicy-ruby.vercel.app'>Learn more</Link>
+          <Link href='https://privacypolicy-ruby.vercel.app'>Learn more</Link>
         </p>
         <button onClick={handleAccept}>I Agree</button>
       </div>
