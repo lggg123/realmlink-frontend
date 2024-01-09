@@ -38,16 +38,14 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
         console.error('Error connecting wallet:', error)
       }
     } else {
-      if (ethereum) {
-        ethereum.selectedAddress = null
-      }
+      onConnectWallet('')
       setConnected(false)
       setWalletAddress('')
     }
   }
 
   return (
-    <div className='walletConnection' style={{ paddingBottom: '150px' }}>
+    <div className='walletConnection' style={{ paddingBottom: '50px' }}>
       <button
         className={`btn ${
           connected ? 'btn-disconnect' : 'btn-connect'

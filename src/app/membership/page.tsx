@@ -7,7 +7,7 @@ import WalletConnection from '../components/buttons/WalletConnection' // Assumin
 import { ethers } from 'ethers'
 
 const USDC_CONTRACT_ADDRESS = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'
-const NFT_CONTRACT_ADDRESS = '0x8F9881257074053Ee185598253ae5553aC938e85'
+const NFT_CONTRACT_ADDRESS = '0xABEa909D13681FdA347a02A2A9413463F21D0441'
 const USDC_CONTRACT_ABI = [
   // balanceOf
   {
