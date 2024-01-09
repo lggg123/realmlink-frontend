@@ -7,7 +7,7 @@ import WalletConnection from '../components/buttons/WalletConnection' // Assumin
 import { ethers } from 'ethers'
 
 const USDC_CONTRACT_ADDRESS = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'
-const NFT_CONTRACT_ADDRESS = 'YOUR_MEMBERSHIP_NFT_CONTRACT_ADDRESS'
+const NFT_CONTRACT_ADDRESS = '0x8F9881257074053Ee185598253ae5553aC938e85'
 const USDC_CONTRACT_ABI = [
   // balanceOf
   {
@@ -98,17 +98,47 @@ export default function MembershipPage () {
   }
 
   // Function to switch to Polygon Mainnet
+  // Function to switch to Polygon Mainnet
   async function switchToPolygonNetwork () {
     const { ethereum } = window as WindowWithEthereum
+    if (!ethereum) {
+      console.error('Ethereum object not found')
+      return
+    }
+
     try {
+      // Check if already connected to Polygon Mainnet
+      const currentChainId = await ethereum.request({ method: 'eth_chainId' })
+      if (currentChainId === POLYGON_MAINNET_PARAMS.chainId) {
+        setIsConnectedToPolygon(true)
+        return
+      }
+
+      // Attempt to switch to Polygon Mainnet
       await ethereum.request({
-        method: 'wallet_addEthereumChain',
-        params: [POLYGON_MAINNET_PARAMS]
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: POLYGON_MAINNET_PARAMS.chainId }]
       })
+
       setIsConnectedToPolygon(true)
-    } catch (switchError) {
-      // Handle error
-      console.error('Error switching to Polygon:', switchError)
+    } catch (error) {
+      const switchError = error as any // Type assertion to 'any'
+
+      // Handle error, such as network not added to user's wallet
+      if (switchError.code === 4902) {
+        try {
+          // Add Polygon Mainnet to user's wallet
+          await ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [POLYGON_MAINNET_PARAMS]
+          })
+          setIsConnectedToPolygon(true)
+        } catch (addError) {
+          console.error('Error adding Polygon network:', addError)
+        }
+      } else {
+        console.error('Error switching to Polygon:', switchError)
+      }
       setIsConnectedToPolygon(false)
     }
   }
@@ -157,7 +187,7 @@ export default function MembershipPage () {
     <>
       <Header />
       <main className='bg-zinc-900 min-h-screen flex flex-col items-center justify-center text-white'>
-        {/* <WalletConnection onConnectWallet={handleConnectWallet} />
+        <WalletConnection onConnectWallet={handleConnectWallet} />
 
         <section className='text-center my-10'>
           <h2 className='text-4xl font-bold mb-6'>
@@ -221,8 +251,8 @@ export default function MembershipPage () {
           <p>
             Please switch to the Polygon Mainnet to mint your membership NFT.
           </p>
-        )} */}
-        <div>Coming Soon!</div>
+        )}
+        {/* <div>Coming Soon!</div> */}
       </main>
       <Footer />
     </>

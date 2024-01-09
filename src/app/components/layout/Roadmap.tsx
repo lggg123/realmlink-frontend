@@ -16,7 +16,7 @@ const Roadmap = () => {
         'Begin the development of the RealmLink platform, leveraging our advisors’ expertise in blockchain technology and software development.'
     },
     {
-      date: '2024 - Q2',
+      date: '2024 - Q1',
       title: 'Strategic Partnerships',
       description:
         'Forge strategic partnerships, guided by our business and partnerships advisors, to enrich the RealmLink ecosystem and offer more value to users.'

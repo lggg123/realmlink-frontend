@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className='bg-zinc-900 text-white py-4'>
+    <header className='bg-zinc-900 text-white py-4 pb-0'>
       <nav className='container mx-auto flex justify-between items-center'>
         <Link href='/' className='flex items-center'>
           <Image

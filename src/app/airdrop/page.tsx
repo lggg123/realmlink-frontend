@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import WalletConnection from '../components/buttons/WalletConnection'
-import WhitepaperButton from '../components/buttons/WhitepaperButton'
 import Register from '../components/buttons/Register'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
@@ -15,17 +14,21 @@ export default function Airdrop () {
   }
 
   return (
-    <>
+    <div className='flex flex-col min-h-screen'>
+      {' '}
+      {/* Ensure the full screen height and flex column */}
       <Header />
-      <main className='bg-zinc-900 min-h-screen flex flex-col items-center justify-center'>
+      <main className='flex-grow bg-zinc-900 flex flex-col items-center justify-start pt-4'>
+        {' '}
+        {/* flex-grow will take up any available space */}{' '}
+        {/* Reduced padding-top here */}
         <div className='flex flex-col items-center mt-8'>
           <WalletConnection onConnectWallet={handleConnectWallet} />
           <div> </div>
           <Register walletAddress={walletAddress} />
-          {/* <WhitepaperButton /> */}
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

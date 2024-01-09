@@ -47,7 +47,7 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
   }
 
   return (
-    <div className='walletConnection'>
+    <div className='walletConnection' style={{ paddingBottom: '150px' }}>
       <button
         className={`btn ${
           connected ? 'btn-disconnect' : 'btn-connect'

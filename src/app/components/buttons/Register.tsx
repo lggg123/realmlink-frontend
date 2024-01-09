@@ -10,10 +10,10 @@ interface RegisterFormData {
 }
 
 const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
-  const [formData, setFormData] = useState<RegisterFormData>({
-    email: ''
-  })
+  const [formData, setFormData] = useState<RegisterFormData>({ email: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [registrationCompleted, setRegistrationCompleted] = useState(false)
+  const [registrationError, setRegistrationError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -24,39 +24,40 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    // Check if the wallet address is empty
     if (!walletAddress) {
       alert('Please connect your wallet first.')
       return
     }
-    setIsSubmitting(true) // Set the loading state to true
+    setIsSubmitting(true)
 
-    // Combine formData and walletAddress into a new object
     const requestBody = {
       ...formData,
       walletAddress
     }
 
-    // Add logic for form submission, e.g., sending data to a server
     try {
-      const response = await fetch(
-        'https://realmlink-backend-production.up.railway.app/api/register',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(requestBody)
-        }
-      )
-      // Handle the response from the server
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+      })
       const data = await response.json()
-      console.log(data)
-    } catch (error) {
-      console.error('Error during registration:', error)
-      // Handle any errors
-    } finally {
-      setIsSubmitting(false) // Reset the loading state regardless of the result
+      if (response.ok) {
+        setRegistrationCompleted(true)
+      } else {
+        throw new Error(data.error || 'Registration failed')
+      }
+    } catch (error: unknown) {
+      // Now explicitly stating the type as unknown
+      // Perform a type check
+      if (error instanceof Error) {
+        setRegistrationError(error.message)
+      } else {
+        // If it's not an Error instance, you might want to handle it differently
+        setRegistrationError('An unexpected error occurred')
+      }
     }
   }
 
@@ -71,6 +72,12 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
           game-changing updates. Join our community and receive timely
           notifications. Register now to qualify for exclusive airdrops!
         </p>
+        {registrationCompleted && (
+          <p className='text-green-500'>Registration successful!</p>
+        )}
+        {registrationError && (
+          <p className='text-red-500'>{registrationError}</p>
+        )}
       </div>
       <form
         onSubmit={handleSubmit}
@@ -91,16 +98,15 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
             onChange={handleChange}
             required
             className='bg-gray-700 text-white w-full p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+            disabled={registrationCompleted}
           />
         </div>
         <button
           type='submit'
-          className={`bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition duration-300 ease-in-out ${
-            isSubmitting ? 'relative' : ''
-          }`}
-          disabled={isSubmitting}
+          className='bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition duration-300 ease-in-out'
+          disabled={isSubmitting || registrationCompleted}
         >
-          {isSubmitting ? (
+          {isSubmitting && (
             <div className='absolute inset-0 flex items-center justify-center'>
               <div
                 className='spinner-border animate-spin inline-block w-4 h-4 border-4 rounded-full'
@@ -109,9 +115,8 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
                 <span className='visually-hidden'></span>
               </div>
             </div>
-          ) : (
-            'Register'
           )}
+          {registrationCompleted ? 'Registered' : 'Register'}
         </button>
       </form>
     </>

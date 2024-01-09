@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.39.2",
     "@types/jest": "^29.5.11",
     "ethers": "^6.9.1",
     "next": "14.0.4",

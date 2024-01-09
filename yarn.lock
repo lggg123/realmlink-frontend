@@ -2000,6 +2000,62 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
+"@supabase/functions-js@^2.1.5":
+  version "2.1.5"
+  resolved "https://registry.npmjs.org/@supabase/functions-js/-/functions-js-2.1.5.tgz"
+  integrity sha512-BNzC5XhCzzCaggJ8s53DP+WeHHGT/NfTsx2wUSSGKR2/ikLFQTBCDzMvGz/PxYMqRko/LwncQtKXGOYp1PkPaw==
+  dependencies:
+    "@supabase/node-fetch" "^2.6.14"
+
+"@supabase/gotrue-js@^2.60.0":
+  version "2.62.0"
+  resolved "https://registry.npmjs.org/@supabase/gotrue-js/-/gotrue-js-2.62.0.tgz"
+  integrity sha512-4eBuZNXGOk7ewqJuHPYMnk8clCtEx6Hfnu6yHLjZlx7w18TqcojcTRUBZagErtpgwwdfzUwKbquexhbrpH/ysw==
+  dependencies:
+    "@supabase/node-fetch" "^2.6.14"
+
+"@supabase/node-fetch@^2.6.14":
+  version "2.6.15"
+  resolved "https://registry.npmjs.org/@supabase/node-fetch/-/node-fetch-2.6.15.tgz"
+  integrity sha512-1ibVeYUacxWYi9i0cf5efil6adJ9WRyZBLivgjs+AUpewx1F3xPi7gLgaASI2SmIQxPoCEjAsLAzKPgMJVgOUQ==
+  dependencies:
+    whatwg-url "^5.0.0"
+
+"@supabase/postgrest-js@^1.9.0":
+  version "1.9.1"
+  resolved "https://registry.npmjs.org/@supabase/postgrest-js/-/postgrest-js-1.9.1.tgz"
+  integrity sha512-xZD2AZDek4ckjuTU+gt32hCN6fz6L3dFJudbiMqsrJ+Ml/RS9k1Kw6VWj5EAdFUJEYB0O/TKEt6oF5VoUwhn+g==
+  dependencies:
+    "@supabase/node-fetch" "^2.6.14"
+
+"@supabase/realtime-js@^2.8.4":
+  version "2.9.1"
+  resolved "https://registry.npmjs.org/@supabase/realtime-js/-/realtime-js-2.9.1.tgz"
+  integrity sha512-OxmY2qj+y6+KI4ifTL92j5+WYP+u5/PdThlYxVb0GMcMiMHfA7yIku9yaQNC5/oRdIvhuRpTMG/8/R40eB+8pA==
+  dependencies:
+    "@supabase/node-fetch" "^2.6.14"
+    "@types/phoenix" "^1.5.4"
+    ws "^8.14.2"
+
+"@supabase/storage-js@^2.5.4":
+  version "2.5.5"
+  resolved "https://registry.npmjs.org/@supabase/storage-js/-/storage-js-2.5.5.tgz"
+  integrity sha512-OpLoDRjFwClwc2cjTJZG8XviTiQH4Ik8sCiMK5v7et0MDu2QlXjCAW3ljxJB5+z/KazdMOTnySi+hysxWUPu3w==
+  dependencies:
+    "@supabase/node-fetch" "^2.6.14"
+
+"@supabase/supabase-js@^2.39.2":
+  version "2.39.2"
+  resolved "https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.39.2.tgz"
+  integrity sha512-P+raK0epLef7x/s4MOUx6/TM2DX2UqMwbQXcV8PKYBX6xvX/zXARzakHsBrL/W5mA52S1vsRZjR8l7HhEPKmqA==
+  dependencies:
+    "@supabase/functions-js" "^2.1.5"
+    "@supabase/gotrue-js" "^2.60.0"
+    "@supabase/node-fetch" "^2.6.14"
+    "@supabase/postgrest-js" "^1.9.0"
+    "@supabase/realtime-js" "^2.8.4"
+    "@supabase/storage-js" "^2.5.4"
+
 "@swc/helpers@0.5.2":
   version "0.5.2"
   resolved "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.2.tgz"
@@ -2166,6 +2222,11 @@
   version "18.15.13"
   resolved "https://registry.npmjs.org/@types/node/-/node-18.15.13.tgz"
   integrity sha512-N+0kuo9KgrUQ1Sn/ifDXsvg0TTleP7rIy4zOBGECxAljqvqfqpTfzx0Q1NUedOixRMBfe2Whhb056a42cWs26Q==
+
+"@types/phoenix@^1.5.4":
+  version "1.6.4"
+  resolved "https://registry.npmjs.org/@types/phoenix/-/phoenix-1.6.4.tgz"
+  integrity sha512-B34A7uot1Cv0XtaHRYDATltAdKx0BvVKNgYNqE4WjtPUa4VQJM7kxeXcVKaH+KS+kCmZ+6w+QaUdcljiheiBJA==
 
 "@types/prop-types@*":
   version "15.7.11"
@@ -7908,6 +7969,11 @@ ws@^8.11.0:
   version "8.15.1"
   resolved "https://registry.npmjs.org/ws/-/ws-8.15.1.tgz"
   integrity sha512-W5OZiCjXEmk0yZ66ZN82beM5Sz7l7coYxpRkzS+p9PP+ToQry8szKh+61eNktr7EA9DOwvFGhfC605jDHbP6QQ==
+
+ws@^8.14.2:
+  version "8.16.0"
+  resolved "https://registry.npmjs.org/ws/-/ws-8.16.0.tgz"
+  integrity sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ==
 
 ws@8.5.0:
   version "8.5.0"
