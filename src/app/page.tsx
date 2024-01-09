@@ -51,34 +51,13 @@ export default function Home () {
       <Header />
       <main className='bg-zinc-900 min-h-screen flex flex-col items-center justify-center'>
         <Hero />
-        {/* <IntroductionSection /> */}
         <div className='combined-sections'>
           <FeaturesSection />
           <BenefitsForGamers />
         </div>
-        <div className='combined-sections'>
+        <div className='combined-sections2'>
           <BenefitsForBuilders />
           <JoinCommunitySection />
-        </div>
-        <div id='about' className='flex flex-col items-center mt-8'>
-          <CoreValues />
-        </div>
-        <div id='team' className='flex flex-col items-center mt-8'>
-          <Founders founders={foundersData} />
-          <TeamSection teamType='CSuite' teamMembers={cSuiteData} />
-          <TeamSection teamType='Business Developers' teamMembers={bdData} />
-          <TeamSection teamType='Developers' teamMembers={developersData} />
-          <TeamSection
-            teamType='Management/Relations'
-            teamMembers={managementData}
-          />
-          <TeamSection teamType='Community/Growth' teamMembers={growthData} />
-          <Advisors advisors={advisorsData} />
-        </div>
-        <div id='contact' className='flex flex-col items-center mt-8'>
-          <WalletConnection onConnectWallet={handleConnectWallet} />
-          <Register walletAddress={walletAddress} />
-          <WhitepaperButton />
         </div>
       </main>
       <Footer />

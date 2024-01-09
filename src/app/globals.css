@@ -7,3 +7,28 @@
 @import 'css/components.css';
 @import 'css/layout.css';
 @import 'css/utilities.css';
+
+
+@keyframes spinner-border {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .spinner-border {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-color: transparent;
+    border-top-color: currentColor;
+    border-width: 0.25em;
+    border-radius: 99999px;
+  }
+  
+  .spinner-border.animate-spin {
+    animation: spinner-border 1s linear infinite;
+  }
+  
+  .bg-hero-pattern {
+    background-image: url('/hero-background.png');
+  }

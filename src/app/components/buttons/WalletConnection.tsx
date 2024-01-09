@@ -1,6 +1,5 @@
 // components/WalletConnection.tsx
-
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { ethers } from 'ethers'
 import Image from 'next/image'
 
@@ -15,22 +14,19 @@ interface WalletConnectionProps {
 const WalletConnection: React.FC<WalletConnectionProps> = ({
   onConnectWallet
 }) => {
-  // State variables for wallet connection status and address
   const [connected, setConnected] = useState<boolean>(false)
   const [walletAddress, setWalletAddress] = useState<string>('')
 
-  // Function to connect/disconnect the wallet
   const connectWallet = async () => {
     const { ethereum } = window as WindowWithEthereum
 
     if (!ethereum) {
       alert(
-        'Install metamask & if on mobile view this page through the metamask mobile app browser'
+        'Install Metamask & if on mobile, view this page through the Metamask mobile app browser'
       )
     }
 
     if (!connected && ethereum) {
-      // Connect the wallet using ethers.js
       try {
         const provider = new ethers.BrowserProvider(ethereum)
         const signer = await provider.getSigner()
@@ -42,7 +38,6 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
         console.error('Error connecting wallet:', error)
       }
     } else {
-      // Disconnect the wallet
       if (ethereum) {
         ethereum.selectedAddress = null
       }
@@ -56,22 +51,22 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
       <button
         className={`btn ${
           connected ? 'btn-disconnect' : 'btn-connect'
-        } rounded-full`}
+        } py-2 px-4 flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg`}
         onClick={connectWallet}
       >
         <Image
           src='/metamask.png'
           alt='Metamask Logo'
-          width={16} // Added width
-          height={16} // Added height
-          className='mr-2 w-6 h-6'
+          width={24}
+          height={24}
+          className='mr-2'
         />
         {connected ? 'Disconnect Wallet' : 'Connect Wallet'}
       </button>
       {connected && (
-        <div>
-          <h3 className='text-gray-500'>Address</h3>
-          <h4 className='wal-add text-gray-500'>{walletAddress}</h4>
+        <div className='mt-4 p-3 bg-gray-800 text-white rounded-lg shadow-md'>
+          <h3 className='text-gray-400 text-sm'>Connected Address:</h3>
+          <h4 className='wal-add break-words'>{walletAddress}</h4>
         </div>
       )}
     </div>

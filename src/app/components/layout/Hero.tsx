@@ -1,22 +1,29 @@
-// components/Hero.tsx
 import React from 'react'
+import Link from 'next/link'
 
 const Hero: React.FC = () => {
   return (
-    <section className='bg-gray-800 text-white text-center py-16 rounded-md shadow-xl'>
-      <h1 className='text-4xl font-bold mb-4'>Welcome to RealmLink</h1>
-      <p className='mb-2'>
-        Where your virtual adventures transcend boundaries!
-      </p>
-      <p className='mb-2'>
-        Carry your characters, items, and pets across multiple gaming realms.
-      </p>
-      <p className='mb-6'>
-        Unleash the power of web3 technology in interconnected games.
-      </p>
-      <button className='bg-blue-800 text-white py-2 px-4 rounded-full text-lg cursor-pointer mt-6'>
-        <a href='#contact'>Register For Airdrop</a>
-      </button>
+    <section className='relative bg-hero-pattern bg-cover bg-center bg-no-repeat text-white text-center py-24 rounded-md shadow-xl'>
+      <div className='backdrop-brightness-50 backdrop-filter backdrop-blur-sm rounded-md'>
+        <h1 className='text-5xl font-extrabold mb-6'>
+          Welcome to the Adventure
+        </h1>
+        <p className='text-xl mb-4'>
+          Where your virtual adventures transcend boundaries.
+        </p>
+        <p className='text-xl mb-4'>
+          Carry your characters, items, and pets across multiple gaming realms.
+        </p>
+        <p className='text-xl mb-8'>
+          Unleash the power of web3 technology in interconnected games.
+        </p>
+        <Link
+          className='inline-block bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-full text-lg font-medium cursor-pointer transition duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg'
+          href='/airdrop'
+        >
+          Register For Airdrop
+        </Link>
+      </div>
     </section>
   )
 }

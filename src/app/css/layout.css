@@ -3,6 +3,14 @@
     flex-direction: column;
     gap: 4rem;
   }
+
+  .combined-sections2 {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 7rem;
+  }
+
   
   @media (min-width: 768px) {
     .flip-card-container {
@@ -12,6 +20,12 @@
   
   @media (min-width: 1024px) {
     .combined-sections {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .combined-sections2 {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;

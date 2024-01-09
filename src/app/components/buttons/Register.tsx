@@ -13,6 +13,7 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
   const [formData, setFormData] = useState<RegisterFormData>({
     email: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -23,12 +24,12 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-
     // Check if the wallet address is empty
     if (!walletAddress) {
       alert('Please connect your wallet first.')
       return
     }
+    setIsSubmitting(true) // Set the loading state to true
 
     // Combine formData and walletAddress into a new object
     const requestBody = {
@@ -37,45 +38,50 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
     }
 
     // Add logic for form submission, e.g., sending data to a server
-    const response = await fetch(
-      'https://realmlink-backend-production.up.railway.app/api/register',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestBody)
-      }
-    )
-
-    // Handle the response from the server
-    const data = await response.json()
-    console.log(data)
+    try {
+      const response = await fetch(
+        'https://realmlink-backend-production.up.railway.app/api/register',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(requestBody)
+        }
+      )
+      // Handle the response from the server
+      const data = await response.json()
+      console.log(data)
+    } catch (error) {
+      console.error('Error during registration:', error)
+      // Handle any errors
+    } finally {
+      setIsSubmitting(false) // Reset the loading state regardless of the result
+    }
   }
 
   return (
     <>
-      <div className='bg-zinc-950 text-white p-6 rounded-t-md shadow-md flex flex-col'>
-        <p>
+      <div className='text-center p-6 bg-zinc-800 text-white rounded-lg shadow-md mb-6'>
+        <h2 className='text-2xl font-bold mb-3'>
+          Join the Realmlink Community
+        </h2>
+        <p className='mb-3'>
           Be the first to discover exciting news, exclusive features, and
-          game-changing
-        </p>
-        <p>
-          {' '}
-          updates from Realmlink. Join our community of enthusiasts and receive
-        </p>
-        <p>
-          timely notifications straight to your inbox. We&apos;ll also be
-          airdropping to those that register in the first 6 months.
+          game-changing updates. Join our community and receive timely
+          notifications. Register now to qualify for exclusive airdrops!
         </p>
       </div>
       <form
         onSubmit={handleSubmit}
-        className='bg-zinc-950 p-6 rounded-b-md shadow-md flex flex-col md:flex-row md:items-start'
+        className='bg-zinc-800 p-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center gap-4'
       >
-        <div className='mb-4 md:mb-0 md:mr-4'>
-          <label htmlFor='email' className='block mb-2 text-white'>
-            Email
+        <div className='flex-grow'>
+          <label
+            htmlFor='email'
+            className='block mb-2 text-sm font-medium text-gray-300'
+          >
+            Email Address
           </label>
           <input
             type='email'
@@ -84,30 +90,28 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
             value={formData.email}
             onChange={handleChange}
             required
-            className='w-full p-2 border border-gray-300'
-          />
-        </div>
-
-        <div className='mb-7 md:mb-0'>
-          <label
-            htmlFor='walletAddress'
-            className='block mb-2 text-gray-800'
-          ></label>
-          <input
-            type='text'
-            id='walletAddress'
-            name='walletAddress'
-            value={walletAddress}
-            onChange={handleChange}
-            readOnly
-            style={{ display: 'none' }}
+            className='bg-gray-700 text-white w-full p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
           />
         </div>
         <button
           type='submit'
-          className='bg-zinc-600 text-white rounded-md p-2 hover:bg-zinc-300 transition duration-300 mt-8 md:ml-4'
+          className={`bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition duration-300 ease-in-out ${
+            isSubmitting ? 'relative' : ''
+          }`}
+          disabled={isSubmitting}
         >
-          Submit
+          {isSubmitting ? (
+            <div className='absolute inset-0 flex items-center justify-center'>
+              <div
+                className='spinner-border animate-spin inline-block w-4 h-4 border-4 rounded-full'
+                role='status'
+              >
+                <span className='visually-hidden'></span>
+              </div>
+            </div>
+          ) : (
+            'Register'
+          )}
         </button>
       </form>
     </>
