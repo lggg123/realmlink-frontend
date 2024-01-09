@@ -61,8 +61,8 @@ const CoreValues: React.FC = () => {
             className='mx-auto'
           />
           <p className='value-description text-gray-300 mt-4'>
-            Innovation is the cornerstone of our journey. We're committed to
-            fostering a culture where creative ideas flourish, and boundaries
+            Innovation is the cornerstone of our journey. We&apos;re committed
+            to fostering a culture where creative ideas flourish, and boundaries
             are redefined. Our platform is a catalyst for groundbreaking
             experiences, unlocking new possibilities in gaming and beyond. Join
             us in paving the path towards a future brimming with innovation.

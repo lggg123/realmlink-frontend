@@ -16,7 +16,7 @@ interface TeamSectionProps {
 const TeamSection: React.FC<TeamSectionProps> = ({ teamType, teamMembers }) => {
   return (
     <div className='text-center'>
-      <h1 className='text-4xl text-gray-300 font-bold mb-8'>{teamType}</h1>
+      <h1 className='text-3xl text-gray-300 font-bold mb-8'>{teamType}</h1>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
         {teamMembers.map((member, index) => (
           <div key={index} className='flex flex-col items-center mb-4'>
