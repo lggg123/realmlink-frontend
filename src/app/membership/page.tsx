@@ -75,10 +75,12 @@ export default function MembershipPage () {
   const handleConnectWallet = async (address: string) => {
     // Set wallet address
     setWalletAddress(address)
-    // Fetch balances
-    fetchBalances(address)
+
     // Check and switch to Polygon Mainnet
     await switchToPolygonNetwork()
+
+    // Fetch balances
+    fetchBalances(address)
   }
 
   // Function to fetch MATIC and USDC balances
@@ -133,6 +135,10 @@ export default function MembershipPage () {
             params: [POLYGON_MAINNET_PARAMS]
           })
           setIsConnectedToPolygon(true)
+          const provider = new ethers.BrowserProvider(ethereum)
+          const signer = await provider.getSigner()
+          const _walletAddress = await signer.getAddress()
+          await fetchBalances(_walletAddress)
         } catch (addError) {
           console.error('Error adding Polygon network:', addError)
         }
@@ -207,6 +213,7 @@ export default function MembershipPage () {
               once deployed.
             </li>
             <li>Discounts and special offers within our gaming ecosystem.</li>
+            <li>Early Access Alpha Realms</li>
           </ul>
 
           <div className='flex justify-center items-center flex-wrap gap-4'>

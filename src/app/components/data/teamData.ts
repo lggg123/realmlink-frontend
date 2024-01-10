@@ -1,0 +1,5 @@
+export const teamData = [
+    { name: "Sekar Langit", title: "Senior Product Manager", photo: "/Sekar.jpg", description: ""},
+    { name: 'Dora Kovacs', title: 'Head of Community Growth', photo: '/Dora.jpg', description: '' },
+    { name: "Lucas Leskovar", title: "Head of BD", photo: "/Lucas.jpg", description: "Lucas E. R. Nuñez Leskovar is the Founder & CEO of WeDevYou, Awakening Digital, NekoGames, and Bosque Ventures. Leading the LATAM community for Polygon, he recently joined the AquaPurgeWeb3 Project to address plastic pollution. With 12+ years of experience in software, multimedia, video games, NGOs, and fintech, Lucas co-founded Guara.AI, Rhyno Multimedia Agency, Donar Digital, and contributed to various startups. He held architecture roles for PAMI and worked on entertainment projects for NeoMedia TV and Globant. Currently a professor at UTN Buenos Aires, he is also involved in environmental projects and ventures promoting technology in LATAM."}
+]

@@ -6,6 +6,7 @@ import Advisors from '../components/layout/Advisors'
 import TeamSection from '../components/layout/TeamSection'
 import { advisorsData } from '../components/data/advisorsData'
 import { bdData } from '../components/data/bdData'
+import { teamData } from '../components/data/teamData'
 import { cSuiteData } from '../components/data/cSuiteData'
 import { developersData } from '../components/data/developersData'
 import { managementData } from '../components/data/managementData'
@@ -39,13 +40,15 @@ export default function Team () {
           <div></div>
           <Founders founders={foundersData} />
           <TeamSection teamType='CSuite' teamMembers={cSuiteData} />
-          <TeamSection teamType='Business Developers' teamMembers={bdData} />
+          <TeamSection teamType='Team' teamMembers={teamData} />
+
+          {/* <TeamSection teamType='Business Developers' teamMembers={bdData} />
           <TeamSection teamType='Developers' teamMembers={developersData} />
           <TeamSection
             teamType='Management/Relations'
             teamMembers={managementData}
           />
-          <TeamSection teamType='Community/Growth' teamMembers={growthData} />
+          <TeamSection teamType='Community/Growth' teamMembers={growthData} /> */}
           <Advisors advisors={advisorsData} />
         </div>
       </main>
