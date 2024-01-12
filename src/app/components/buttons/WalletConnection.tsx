@@ -62,7 +62,7 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
         {connected ? 'Disconnect Wallet' : 'Connect Wallet'}
       </button>
       {connected && (
-        <div className='mt-4 p-3 bg-gray-800 text-white rounded-lg shadow-md'>
+        <div className='m-6 p-3 bg-gray-800 text-white rounded-lg shadow-md'>
           <h3 className='text-gray-400 text-sm'>Connected Address:</h3>
           <h4 className='wal-add break-words'>{walletAddress}</h4>
         </div>
