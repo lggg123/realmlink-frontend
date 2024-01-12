@@ -28,7 +28,17 @@ export default function Airdrop () {
           <Register walletAddress={walletAddress} />
         </div>
       </main>
-      <Footer />
+      <style jsx>{`
+        @media screen and (max-width: 768px) {
+          .flex-col.items-center {
+            text-align: center; // Center-align text
+          }
+
+          .flex.flex-col.items-center.mt-8 {
+            margin-top: 4rem; // Adjust margin for better spacing
+          }
+        }
+      `}</style>
     </div>
   )
 }
