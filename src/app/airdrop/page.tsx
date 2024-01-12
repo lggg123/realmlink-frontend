@@ -38,7 +38,7 @@ export default function Airdrop () {
             margin-top: 4rem; // Adjust margin for better spacing
           }
 
-          .wallet-connection {
+          .walletConnection {
             text-align: center; // Center-align wallet connection text
           }
 
