@@ -79,7 +79,7 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
 
           .btn-connect,
           .btn-disconnect {
-            margin-top: 1rem; // Adjust top margin for the button
+            align-items: center; // Adjust top margin for the button
           }
         }
       `}</style>
