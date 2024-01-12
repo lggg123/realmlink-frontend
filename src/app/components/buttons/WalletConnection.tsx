@@ -67,6 +67,22 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
           <h4 className='wal-add break-words'>{walletAddress}</h4>
         </div>
       )}
+      <style jsx>{`
+        @media screen and (max-width: 768px) {
+          .walletConnection {
+            text-align: center;
+          }
+
+          .wal-add {
+            margin: 0 1rem; // Adjust margin for wallet address
+          }
+
+          .btn-connect,
+          .btn-disconnect {
+            margin-top: 1rem; // Adjust top margin for the button
+          }
+        }
+      `}</style>
     </div>
   )
 }
