@@ -103,7 +103,7 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
         </div>
         <button
           type='submit'
-          className='bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition duration-300 ease-in-out'
+          className='register-button bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition duration-300 ease-in-out'
           disabled={isSubmitting || registrationCompleted}
         >
           {isSubmitting && (
