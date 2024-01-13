@@ -44,6 +44,10 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
     }
   }
 
+  const truncateAddress = (address) => {
+    return address.slice(0, 6) + '...' + address.slice(-4);
+  };
+
   return (
     <div className='walletConnection' style={{ paddingBottom: '50px' }}>
       <button
@@ -62,24 +66,15 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
         {connected ? 'Disconnect Wallet' : 'Connect Wallet'}
       </button>
       {connected && (
-        <div className='m-6 p-3 bg-gray-800 text-white rounded-lg shadow-md'>
+        <div className='mt-4 p-3 bg-gray-800 text-white rounded-lg shadow-md'>
           <h3 className='text-gray-400 text-sm'>Connected Address:</h3>
-          <h4 className='wal-add break-words'>{walletAddress}</h4>
+          <h4 className='wal-add break-words'>{truncateAddress(walletAddress)}</h4>
         </div>
       )}
       <style jsx>{`
         @media screen and (max-width: 768px) {
           .walletConnection {
             text-align: center;
-          }
-
-          .wal-add {
-            margin: 0 1rem; // Adjust margin for wallet address
-          }
-
-          .btn-connect,
-          .btn-disconnect {
-            align-items: center; // Adjust top margin for the button
           }
         }
       `}</style>
