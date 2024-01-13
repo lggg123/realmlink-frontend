@@ -37,14 +37,6 @@ export default function Airdrop () {
           .flex.flex-col.items-center.mt-8 {
             margin-top: 4rem; // Adjust margin for better spacing
           }
-
-          .walletConnection {
-            text-align: center; // Center-align wallet connection text
-          }
-
-          .register-button {
-            margin-top: 1rem; // Adjust top margin for button
-          }
         }
       `}</style>
     </div>
