@@ -3,16 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 15, 23, 42; /* Tailwind's coolGray-900 color */
-  --background-end-rgb: 17, 24, 39; /* A slightly lighter coolGray-900 color */
+
+  --primary-dark-blue: #0c1929; /* Primary dark blue from the logo */
+  --primary-white: #ffffff; /* Primary white from the logo */
+  --secondary-deep-blue: #0c1a27; /* Secondary deep blue from the logo */
+  --secondary-slate-blue: #0b1828; /* Secondary slate blue from the logo */
+  --secondary-navy-blue: #0a1a29; /* Secondary navy blue from the logo */
+  --brand-green-light: #8BEC90;
+  --brand-green-dark: #49B583;
+  --brand-black: #000000;
+
+  --foreground-rgb: var(--primary-white);
+  --background-start-rgb: var(--primary-dark-blue);
+  --background-end-rgb: var(--secondary-deep-blue);
   --button-radius: 9999px;
   --transition-speed: 0.3s;
-  --card-bg-start: 14, 165, 233; /* Tailwind's sky-500 color */
-  --card-bg-end: 30, 58, 138; /* Tailwind's blue-800 color */
+  --card-bg-start: var(--secondary-slate-blue);
+  --card-bg-end: var(--secondary-navy-blue);
   --card-width-small: 80%; /* Width of the cards on small screens */
   --card-width-large: 22%; /* Width of the cards on large screens */
   --card-margin: 1rem; /* Margin around cards */
+}
+
+.brand-black{
+  background-color: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,8 +34,8 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 15, 23, 42;
     --background-end-rgb: 17, 24, 39;
-    --card-bg-start: 29, 78, 216; /* Tailwind's blue-600 color */
-    --card-bg-end: 59, 130, 246; /* Tailwind's blue-500 color */
+    --card-bg-start: var(--secondary-slate-blue);
+    --card-bg-end: var(--secondary-navy-blue);
   }
 }
 

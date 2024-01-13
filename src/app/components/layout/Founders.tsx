@@ -1,4 +1,3 @@
-// components/layout/Founders.tsx
 import React from 'react'
 import Image from 'next/image'
 
@@ -16,25 +15,30 @@ interface FoundersProps {
 const Founders: React.FC<FoundersProps> = ({ founders }) => {
   return (
     <div className='text-center'>
-      <h1 className='text-4xl text-gray-300 font-bold mb-8'>
+      <h1 className='text-4xl text-primary-white font-bold mb-8'>
         Meet the Founders
       </h1>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         {founders.map((founder, index) => (
-          <div key={index} className='flex flex-col items-center mb-4'>
-            <Image
-              src={founder.photo}
-              alt={founder.name}
-              width={200}
-              height={200}
-              className='rounded-full'
-            />
+          <div
+            key={index}
+            className='flex flex-col items-center mb-4 p-4 border-2 border-brand-green-dark rounded-lg'
+          >
+            <div className='rounded-full border-2 border-brand-green-dark overflow-hidden mb-4'>
+              <Image
+                src={founder.photo}
+                alt={founder.name}
+                width={200}
+                height={200}
+                className='rounded-full'
+              />
+            </div>
             <div className='text-sm mt-2'>
-              <h4 className='text-xl text-gray-500 font-bold'>
+              <h4 className='text-xl text-primary-white font-bold'>
                 {founder.name}
               </h4>
-              <p className='text-gray-400'>{founder.title}</p>
-              <p className='text-gray-400'>{founder.description}</p>
+              <p className='text-primary-white'>{founder.title}</p>
+              <p className='text-primary-white'>{founder.description}</p>
             </div>
           </div>
         ))}

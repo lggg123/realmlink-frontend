@@ -10,12 +10,16 @@
     "test": "jest"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@supabase/supabase-js": "^2.39.2",
     "@types/jest": "^29.5.11",
     "ethers": "^6.9.1",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^5.0.1",
     "react-intersection-observer": "^9.5.3",
     "react-spring": "^9.7.3",
     "react-vertical-timeline-component": "^3.6.0"

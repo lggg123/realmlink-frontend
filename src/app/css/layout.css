@@ -33,3 +33,7 @@
     }
   }
   
+  .header {
+    /* ... other styles ... */
+    border-bottom: 4px solid var(--brand-green-dark);
+  }

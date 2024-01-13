@@ -5,9 +5,15 @@ function FeaturesSection () {
   return (
     <FlipCard title='Key Features'>
       <ul>
-        <li>Interoperability across games</li>
-        <li>Blockchain-based asset management</li>
-        <li>Community-driven development</li>
+        <li>Universal Character and Item Portability Across Multiple Genres</li>
+        <li>
+          Blockchain-empowered Asset Ownership for Gamers and Efficient
+          Management for Builders
+        </li>
+        <li>
+          Shape Your Gaming World: Participate in Community-Driven Game
+          Development
+        </li>
         {/* Add more features as needed */}
       </ul>
     </FlipCard>

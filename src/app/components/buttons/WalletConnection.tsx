@@ -45,8 +45,8 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
   }
 
   const truncateAddress = (address: string) => {
-    return address.slice(0, 6) + '...' + address.slice(-4);
-  };
+    return address.slice(0, 6) + '...' + address.slice(-4)
+  }
 
   return (
     <div className='walletConnection' style={{ paddingBottom: '50px' }}>
@@ -68,7 +68,9 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
       {connected && (
         <div className='mt-4 p-3 bg-gray-800 text-white rounded-lg shadow-md'>
           <h3 className='text-gray-400 text-sm'>Connected Address:</h3>
-          <h4 className='wal-add break-words'>{truncateAddress(walletAddress)}</h4>
+          <h4 className='wal-add break-words'>
+            {truncateAddress(walletAddress)}
+          </h4>
         </div>
       )}
       <style jsx>{`

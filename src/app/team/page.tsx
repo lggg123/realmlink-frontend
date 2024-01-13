@@ -35,12 +35,12 @@ export default function Team () {
   return (
     <>
       <Header />
-      <main className='bg-zinc-900 min-h-screen flex flex-col items-center justify-center'>
+      <main className='brand-black text-primary-white  min-h-screen flex flex-col items-center justify-center'>
         <div id='team' className='flex flex-col items-center mt-8'>
           <div></div>
           <Founders founders={foundersData} />
           <TeamSection teamType='CSuite' teamMembers={cSuiteData} />
-          <TeamSection teamType='Team' teamMembers={teamData} />
+          <TeamSection teamType='Department Heads' teamMembers={teamData} />
 
           {/* <TeamSection teamType='Business Developers' teamMembers={bdData} />
           <TeamSection teamType='Developers' teamMembers={developersData} />

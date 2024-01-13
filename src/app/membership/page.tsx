@@ -5,6 +5,7 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import WalletConnection from '../components/buttons/WalletConnection' // Assuming you have this component from before
 import { ethers } from 'ethers'
+import Image from 'next/image'
 
 const USDC_CONTRACT_ADDRESS = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'
 const NFT_CONTRACT_ADDRESS = '0xABEa909D13681FdA347a02A2A9413463F21D0441'
@@ -76,11 +77,13 @@ export default function MembershipPage () {
     // Set wallet address
     setWalletAddress(address)
 
-    // Check and switch to Polygon Mainnet
-    await switchToPolygonNetwork()
+    if (address !== '') {
+      // Check and switch to Polygon Mainnet
+      await switchToPolygonNetwork()
 
-    // Fetch balances
-    fetchBalances(address)
+      // Fetch balances
+      fetchBalances(address)
+    }
   }
 
   // Function to fetch MATIC and USDC balances
@@ -190,11 +193,12 @@ export default function MembershipPage () {
   }
 
   return (
-    <>
+    <div className='flex flex-col min-h-screen'>
       <Header />
-      <main className='bg-zinc-900 min-h-screen flex flex-col items-center justify-center text-white'>
-        <WalletConnection onConnectWallet={handleConnectWallet} />
-
+      <main className='brand-black text-primary-white flex flex-grow flex-col items-center justify-between text-white pt-20'>
+        <div className='pt-6'>
+          <WalletConnection onConnectWallet={handleConnectWallet} />
+        </div>
         <section className='text-center my-10'>
           <h2 className='text-4xl font-bold mb-6'>
             Why Mint a Membership NFT?
@@ -217,15 +221,19 @@ export default function MembershipPage () {
           </ul>
 
           <div className='flex justify-center items-center flex-wrap gap-4'>
-            <img
+            <Image
               src='/membership-benefit-1.png'
               alt='Early Access'
               className='rounded-lg shadow-lg w-1/2 max-w-xs'
+              width={400}
+              height={400}
             />
-            <img
+            <Image
               src='/membership-benefit-2.png'
               alt='Premium Airdrops'
               className='rounded-lg shadow-lg w-1/2 max-w-xs'
+              width={400}
+              height={400}
             />
           </div>
         </section>
@@ -262,6 +270,6 @@ export default function MembershipPage () {
         {/* <div>Coming Soon!</div> */}
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

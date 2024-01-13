@@ -73,24 +73,24 @@ const Roadmap = () => {
   ]
 
   return (
-    <section className='roadmap-section bg-gray-800 py-8 rounded-lg'>
-      <h2 className='text-center text-3xl font-bold text-white mb-10'>
+    <section className='roadmap-section brand-black py-8 rounded-lg shadow-xl'>
+      <h2 className='text-center text-3xl font-bold text-brand-green-light mb-10'>
         Our Roadmap
       </h2>
       <div className='timeline-container'>
         {events.map((event, index) => (
           <div
             key={index}
-            className='timeline-item bg-gray-700 hover:bg-gray-600 rounded-lg shadow-lg p-6 mb-6 transition duration-300 ease-in-out'
+            className='timeline-item bg-secondary-navy-blue border-2 border-brand-green-dark hover:bg-secondary-slate-blue rounded-lg shadow-lg p-6 mb-6 transition duration-300 ease-in-out transform hover:scale-105'
           >
             <div className='timeline-content'>
-              <span className='timeline-time text-lg text-blue-400 font-semibold'>
+              <span className='timeline-time text-lg text-brand-green-light font-semibold'>
                 {event.date}
               </span>
-              <h3 className='timeline-title text-2xl text-white font-bold my-2'>
+              <h3 className='timeline-title text-2xl text-primary-white font-bold my-2'>
                 {event.title}
               </h3>
-              <p className='timeline-description text-gray-300'>
+              <p className='timeline-description text-primary-white'>
                 {event.description}
               </p>
             </div>
@@ -104,8 +104,8 @@ const Roadmap = () => {
           align-items: center;
         }
         .timeline-item {
-          width: 90%; /* Adjust the width as needed */
-          max-width: 800px; /* Ensure it doesn't get too wide on large screens */
+          width: 90%;
+          max-width: 800px;
         }
         .timeline-time {
           display: inline-block;
@@ -114,6 +114,7 @@ const Roadmap = () => {
         .timeline-title {
           line-height: 1.2;
         }
+        // Additional styles can be added here if needed
       `}</style>
     </section>
   )

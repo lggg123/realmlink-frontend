@@ -13,6 +13,15 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'realm-dark-blue': '#0c1929',
+        'primary-dark-blue': '#0c1929',
+        'primary-white': '#ffffff',
+        'brand-green-light': '#8BEC90', // new light green
+        'brand-green-dark': '#49B583', // new dark green
+        "brand-black": "#000000"
+        // other colors from the branding guide...
+      },
     },
   },
   plugins: [],

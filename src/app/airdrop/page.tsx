@@ -18,7 +18,7 @@ export default function Airdrop () {
       {' '}
       {/* Ensure the full screen height and flex column */}
       <Header />
-      <main className='flex-grow bg-zinc-900 flex flex-col items-center justify-start pt-4'>
+      <main className='flex-grow brand-black text-primary-white  flex flex-col items-center justify-start pt-4'>
         {' '}
         {/* flex-grow will take up any available space */}{' '}
         {/* Reduced padding-top here */}
@@ -39,6 +39,7 @@ export default function Airdrop () {
           }
         }
       `}</style>
+      <Footer />
     </div>
   )
 }
