@@ -150,13 +150,13 @@
     .flip-card-container {
       /* width: var(--card-width-small); Adjust width for smaller screens */
       height: auto;
-      max-width: 90%;
+      max-width: 300px;
       align-items: center;
     }
     .flip-card-front,
     .flip-card-back {
-      width: 90%;
-      height: 90%;
+      width: 250px;
+      height: 250px;
       position: absolute;
       align-items: center;
       padding: 2.5rem;
