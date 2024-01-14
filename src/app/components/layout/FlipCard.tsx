@@ -24,7 +24,7 @@ function FlipCard ({
 
   return (
     <div
-      className='flip-card-container mx-4 my-12 max-w-md'
+      className='flip-card-container mx-2 my-12 max-w-md'
       onClick={handleFlip}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
