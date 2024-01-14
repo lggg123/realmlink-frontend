@@ -34,7 +34,7 @@ const Advisors: React.FC<AdvisorsProps> = ({ advisors }) => {
               <p className='advisor-title text-primary-white'>
                 {advisor.title}
               </p>
-              <p className='advisor-title text-primary-white'>
+              <p className='advisor-description text-primary-white'>
                 {advisor.description}
               </p>
             </div>
