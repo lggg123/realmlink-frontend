@@ -159,7 +159,7 @@
       height: auto;
       position: absolute;
       align-items: center;
-      /* padding: 2rem; */
+      padding: 1rem;
     }
     .flip-card-inner {
       position: relative;
