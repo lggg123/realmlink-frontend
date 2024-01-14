@@ -19,7 +19,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ teamType, teamMembers }) => {
       <h1 className='team-type-title text-3xl text-primary-white font-bold mb-8 text-center'>
         {teamType}
       </h1>
-      <div className='team-grid grid grid-cols-1 md:grid-cols-3 gap-4'>
+      <div className='team-grid grid grid-cols-1 pb-4 md:grid-cols-3 gap-4'>
         {teamMembers.map((member, index) => (
           <div
             key={index}
