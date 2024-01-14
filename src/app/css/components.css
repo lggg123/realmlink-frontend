@@ -166,6 +166,7 @@
     .flip-card-back {
       width: 350px;
       height: 300px;
+      left: 0.5rem;
     }
     .flip-card-inner {
       position: relative;
