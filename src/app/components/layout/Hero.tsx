@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Hero: React.FC = () => {
   return (
     <section className='relative bg-hero-pattern bg-cover bg-center bg-no-repeat text-white text-center pt-28 pb-28 rounded-md shadow-xl'>
-      <div className='backdrop-brightness-50 backdrop-filter backdrop-blur-sm'>
+      <div className='sm:backdrop-brightness-50 sm:backdrop-filter sm:backdrop-blur-sm'>
         <h1 className='text-5xl font-extrabold mb-6'>
           Begin an amazing gaming adventure.
         </h1>
