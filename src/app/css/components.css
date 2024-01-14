@@ -26,11 +26,11 @@
   }
   
   .advisor-name {
-    height: 3em;
+    height: 2em;
   }
   
   .advisor-title {
-    height: 4em;
+    height: 3em;
   }
   
   @media (min-width: 600px) {
