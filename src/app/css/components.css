@@ -114,29 +114,6 @@
     transform: rotateY(180deg);
   }
   
-  /* Responsive Adjustments for Flip Cards */
-  @media (max-width: 768px) {
-    .flip-card-container {
-      width: var(--card-width-small); /* Adjust width for smaller screens */
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .flip-card-container {
-      width: calc(50% - 2rem); /* Adjust width for 2 cards per row */
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .flip-card-container {
-      width: calc(50% - 2rem); /* Maintain 2 cards per row on larger screens */
-    }
-
-    .core-value {
-        flex-basis: 25%; /* Four columns on desktop */
-      }
-  }
-
   .flip-card-back ul {
     list-style: inside; /* Position bullet points inside the list */
   }
@@ -167,6 +144,57 @@
   .flip-card-back a:hover {
     background-color: var(--secondary-deep-blue);
   }
+
+  /* Responsive Adjustments for Flip Cards */
+  @media (max-width: 768px) {
+    .flip-card-container {
+      /* width: var(--card-width-small); Adjust width for smaller screens */
+      height: auto;
+      max-width: 90%;
+      align-items: center;
+    }
+    .flip-card-front,
+    .flip-card-back {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      align-items: center;
+      /* padding: 2rem; */
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      /* padding-right: 1rem; */
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      /* border-radius: 1rem; */
+    }
+    .flip-card-back ul li {
+      font-size: 0.9rem; /* Larger font size */
+      font-weight: 600; /* Bolder font weight */
+      margin-bottom: 0.8rem; /* Spacing between items */
+    }
+  }
+  
+  
+  @media (min-width: 768px) {
+    .flip-card-container {
+      width: calc(50% - 2rem); /* Adjust width for 2 cards per row */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .flip-card-container {
+      width: calc(50% - 2rem); /* Maintain 2 cards per row on larger screens */
+    }
+
+    .core-value {
+        flex-basis: 25%; /* Four columns on desktop */
+      }
+  }
+
+  
   
   
 
