@@ -3,7 +3,7 @@ import FlipCard from './FlipCard' // Adjust the path as per your file structure
 
 function FeaturesSection () {
   return (
-    <FlipCard title='Key Features'>
+    <FlipCard className="mx-4" title='Key Features'>
       <ul>
         <li>Universal Character and Item Portability Across Multiple Genres</li>
         <li>
