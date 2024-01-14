@@ -150,7 +150,7 @@
     .flip-card-container {
       /* width: var(--card-width-small); Adjust width for smaller screens */
       height: auto;
-      max-width: 300px;
+      max-width: 400px;
       align-items: center;
     }
     .flip-card-front,
@@ -160,12 +160,12 @@
       padding: 2.5rem;
     }
     .flip-card-front {
-      width: 250px;
+      width: 350px;
       height: 250px;
       margin-left: 1rem;
     }
     .flip-card-back {
-      width: 250px;
+      width: 350px;
       height: 300px;
       margin-right: 0.5rem;
     }
