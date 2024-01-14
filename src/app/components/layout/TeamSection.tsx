@@ -19,11 +19,11 @@ const TeamSection: React.FC<TeamSectionProps> = ({ teamType, teamMembers }) => {
       <h1 className='team-type-title text-3xl text-primary-white font-bold mb-8 text-center'>
         {teamType}
       </h1>
-      <div className='team-grid grid grid-cols-1 pb-4 md:grid-cols-3 gap-4'>
+      <div className='team-grid grid grid-cols-1 md:grid-cols-3 gap-4'>
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className='team-member-card flex flex-col items-center mb-4 p-4 rounded-lg shadow-md text-center w-64' // Fixed width of 16rem (64 * 0.25 = 16rem)
+            className='team-member-card flex flex-col items-center mb-4 pt-4 pb-6 px-4 rounded-lg shadow-md text-center w-64' // Fixed width of 16rem (64 * 0.25 = 16rem)
           >
             <div className='team-member-image rounded-full border-2 border-brand-green-dark overflow-hidden mb-4'>
               <Image
