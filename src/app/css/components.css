@@ -157,7 +157,6 @@
     .flip-card-back {
       position: absolute;
       align-items: center;
-      padding: 2.5rem;
     }
     .flip-card-front {
       width: 350px;
