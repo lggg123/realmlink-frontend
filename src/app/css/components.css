@@ -318,6 +318,9 @@
   .team-member-card {
     width: 100%;
   }
+  .team-grid {
+    margin: 0 auto;
+  }
 }
   @media (min-width: 600px) {
     .advisors-grid {
