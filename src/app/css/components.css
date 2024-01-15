@@ -315,6 +315,7 @@
     width: 100%;
     align-items: center;
     text-align: center;
+    justify-content: center;
   }
   .team-member-card {
     width: 100%;
