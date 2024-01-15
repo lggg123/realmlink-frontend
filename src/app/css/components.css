@@ -309,6 +309,12 @@
 .team-member-card {
   width: 16rem; /* or any other fixed width you prefer */
 }
+
+@media (max-width: 768px) {
+  .team-member-card {
+    width: 100%;
+  }
+}
   @media (min-width: 600px) {
     .advisors-grid {
       grid-template-columns: repeat(3, 1fr);
