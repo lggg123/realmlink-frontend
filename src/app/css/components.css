@@ -314,6 +314,7 @@
   .team-section-container {
     width: 100%;
     align-items: center;
+    text-align: center;
   }
   .team-member-card {
     width: 100%;
