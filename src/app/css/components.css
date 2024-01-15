@@ -321,6 +321,7 @@
     width: 100%;
     align-items: center;
     text-align: center;
+    margin: 0 auto;
   }
   .team-grid {
     margin: 0 auto;
