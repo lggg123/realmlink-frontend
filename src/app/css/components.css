@@ -317,6 +317,8 @@
   }
   .team-member-card {
     width: 100%;
+    align-items: center;
+    text-align: center;
   }
   .team-grid {
     margin: 0 auto;
