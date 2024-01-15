@@ -311,6 +311,9 @@
 }
 
 @media (max-width: 768px) {
+  .team-section-container {
+    width: 100%;
+  }
   .team-member-card {
     width: 100%;
   }
