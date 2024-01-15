@@ -313,6 +313,7 @@
 @media (max-width: 768px) {
   .team-section-container {
     width: 100%;
+    align-items: center;
   }
   .team-member-card {
     width: 100%;
