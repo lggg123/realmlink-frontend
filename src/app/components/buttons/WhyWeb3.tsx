@@ -10,7 +10,7 @@ const WhyWeb3Button: React.FC = () => {
                 rel="noopener noreferrer"
                 className="brand-green-dark py-3 px-6 rounded-md shadow-md flex items-center justify-center"
             >
-            Why Web 3?
+            Why Web3?
             </a>
         </>
     );
