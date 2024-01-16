@@ -8,7 +8,7 @@ const WhyWeb3Button: React.FC = () => {
                 href="/web3"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-brand-green-dark py-3 px-6 mb-4 rounded-md shadow-md flex items-center justify-center"
+                className="bg-brand-green-dark py-3 px-6 mb-4 rounded-md shadow-md font-bold flex items-center justify-center"
             >
             Why Web3 & How To Web3?
             </a>
