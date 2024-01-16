@@ -5,6 +5,8 @@ import WalletConnection from '../components/buttons/WalletConnection'
 import Register from '../components/buttons/Register'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
+import WhyWeb3Button from '../components/buttons/WhyWeb3'
+import HowToWeb3Button from '../components/buttons/HowToWeb3'
 
 export default function Airdrop () {
   const [walletAddress, setWalletAddress] = useState<string>('')
@@ -24,6 +26,8 @@ export default function Airdrop () {
         {/* Reduced padding-top here */}
         <div className='flex flex-col items-center mt-8'>
           <WalletConnection onConnectWallet={handleConnectWallet} />
+          <WhyWeb3Button />
+          <HowToWeb3Button />
           <div> </div>
           <Register walletAddress={walletAddress} />
         </div>
