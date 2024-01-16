@@ -11,7 +11,7 @@ const HowToWeb3Button: React.FC = () => {
                 className="brand-green-dark py-3 px-6 rounded-md shadow-md flex items-center justify-center"
             >
             How To Web3?
-            <a/>
+            </a>
         </>
     );
 }
