@@ -1,4 +1,4 @@
-{'use client'} // Mark this file as a Client Component
+'use client' // Mark this file as a Client Component
 
 import React, { useState } from 'react'
 import Header from '../components/layout/Header'
@@ -144,7 +144,7 @@ export default function Team () {
               <li>
                 For iOS and Android: You can find MetaMask on the App Store for
                 iOS and on the Google Play Store for Android. Just search for
-                "MetaMask" and download the official app.
+                &quot;MetaMask&quot; and download the official app.
               </li>
             </ul>
             <p className='mb-2'>Reminder for Mobile Users:</p>
