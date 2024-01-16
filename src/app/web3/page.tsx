@@ -37,7 +37,7 @@ export default function Team () {
               </li>
               <li>
                 Interoperability Across Games: Imagine using your favorite
-                character or item across different games. Web3's interconnected
+                character or item across different games. Web3&apos;s interconnected
                 environment makes this possible, unlike the isolated ecosystems
                 in web2.
               </li>
@@ -47,7 +47,7 @@ export default function Team () {
                 not typically seen in traditional web2 gaming.
               </li>
               <li>
-                Secure and Transparent Transactions: Blockchain's transparent
+                Secure and Transparent Transactions: Blockchain&apos;s transparent
                 and secure nature ensures that your transactions and ownership
                 records are tamper-proof, unlike the opaque systems in web2.
               </li>
@@ -83,7 +83,7 @@ export default function Team () {
                 participating in web3 gaming.
               </li>
               <li>
-                Exploring Web3 Games: With your wallet set up, you're ready to
+                Exploring Web3 Games: With your wallet set up, you&apos;re ready to
                 explore and participate in various web3 games and platforms.
               </li>
             </ul>
@@ -98,7 +98,7 @@ export default function Team () {
                 guide on installing and using MetaMask:
               </li>
               <li>
-                MetaMask Made Easy: ABeginner's Guide -{' '}
+                MetaMask Made Easy: ABeginner&apos;s Guide -{' '}
                 <a
                   href='https://www.youtube.com/watch?v=vuON3keu2C0'
                   target='_blank'
@@ -149,12 +149,12 @@ export default function Team () {
             </ul>
             <p className='mb-2'>Reminder for Mobile Users:</p>
             <p>
-              If you're using MetaMask on a mobile device, remember to access
-              web3 sites through the MetaMask app's built-in browser for a
+              If you&apos;re using MetaMask on a mobile device, remember to access
+              web3 sites through the MetaMask app&apos;s built-in browser for a
               smooth and secure experience.
             </p>
             <p>
-              With these resources and instructions, you're now ready to step
+              With these resources and instructions, you&apos;re now ready to step
               into the world of web3 gaming. Enjoy a new level of interaction
               and ownership in your gaming adventures!
             </p>
