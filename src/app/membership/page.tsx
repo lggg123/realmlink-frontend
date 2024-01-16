@@ -199,6 +199,8 @@ export default function MembershipPage () {
       <main className='brand-black text-primary-white flex flex-grow flex-col items-center justify-between text-white pt-20'>
         <div className='pt-6'>
           <WalletConnection onConnectWallet={handleConnectWallet} />
+        </div>
+        <div>
           <WhyWeb3Button />
         </div>
         <section className='text-center my-10'>
