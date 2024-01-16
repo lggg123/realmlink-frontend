@@ -6,6 +6,8 @@ import Footer from '../components/layout/Footer'
 import WalletConnection from '../components/buttons/WalletConnection' // Assuming you have this component from before
 import { ethers } from 'ethers'
 import Image from 'next/image'
+import WhyWeb3Button from '../components/buttons/WhyWeb3'
+import HowToWeb3Button from '../components/buttons/HowToWeb3'
 
 const USDC_CONTRACT_ADDRESS = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'
 const NFT_CONTRACT_ADDRESS = '0xABEa909D13681FdA347a02A2A9413463F21D0441'
@@ -198,6 +200,8 @@ export default function MembershipPage () {
       <main className='brand-black text-primary-white flex flex-grow flex-col items-center justify-between text-white pt-20'>
         <div className='pt-6'>
           <WalletConnection onConnectWallet={handleConnectWallet} />
+          <WhyWeb3Button />
+          <HowToWeb3Button />
         </div>
         <section className='text-center my-10'>
           <h2 className='text-4xl font-bold mb-6'>
