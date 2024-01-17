@@ -12,7 +12,7 @@ import { PrivacyPolicyPopup } from './components/layout/PolicyPopup'
 
 export default function Home () {
   return (
-    <>
+    <div className="main-container">
       <Header />
       <PrivacyPolicyPopup />
       <main className='brand-black min-h-screen flex flex-col items-center justify-center pt-20 pb-0'>
@@ -27,6 +27,6 @@ export default function Home () {
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
