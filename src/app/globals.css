@@ -8,6 +8,9 @@
 @import 'css/layout.css';
 @import 'css/utilities.css';
 
+body {
+  overflow-x: hidden;
+}
 
 @keyframes spinner-border {
     to {
