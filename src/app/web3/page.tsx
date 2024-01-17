@@ -21,7 +21,7 @@ export default function Team () {
   return (
     <>
       <Header />
-      <main className='brand-black min-h-screen flex flex-col items-center justify-center'>
+      <main className='brand-black min-h-screen text-black flex flex-col items-center justify-center'>
         <section className='bg-gray-100 p-6'>
           <div className='max-w-4xl mx-auto'>
             <h2 className='text-2xl font-bold text-gray-800 mb-4'>
