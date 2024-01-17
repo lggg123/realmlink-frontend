@@ -19,7 +19,7 @@ export default function Team () {
   }
 
   return (
-    <>
+    <div className="main-container">
       <Header />
       <main className='brand-black min-h-screen text-black flex flex-col items-center justify-center'>
         <section className='bg-gray-100 p-6'>
@@ -171,6 +171,6 @@ export default function Team () {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
