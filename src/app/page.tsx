@@ -25,6 +25,9 @@ export default function Home () {
           <BenefitsForBuilders />
           <JoinCommunitySection />
         </div>
+        <div className="align-center justify-center">
+          
+        </div>
       </main>
       <Footer />
     </div>
