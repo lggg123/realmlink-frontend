@@ -40,15 +40,15 @@ export default function Team () {
           <div></div>
           <Founders founders={foundersData} />
           <TeamSection teamType='CSuite' teamMembers={cSuiteData} />
-          <TeamSection teamType='Department Heads' teamMembers={teamData} />
+          {/* <TeamSection teamType='Department Heads' teamMembers={teamData} /> */}
 
-          {/* <TeamSection teamType='Business Developers' teamMembers={bdData} />
+          <TeamSection teamType='Business Developers' teamMembers={bdData} />
           <TeamSection teamType='Developers' teamMembers={developersData} />
           <TeamSection
             teamType='Management/Relations'
             teamMembers={managementData}
           />
-          <TeamSection teamType='Community/Growth' teamMembers={growthData} /> */}
+          <TeamSection teamType='Community/Growth' teamMembers={growthData} />
           <Advisors advisors={advisorsData} />
         </div>
       </main>

@@ -41,11 +41,11 @@ const TeamSection: React.FC<TeamSectionProps> = ({ teamType, teamMembers }) => {
               <p className='team-member-title text-primary-white'>
                 {member.title}
               </p>
-              {member.description && (
-                <p className='team-member-description text-primary-white text-sm mt-1'>
-                  {member.description}
-                </p>
-              )}
+              {/* {member.description && (
+                // <p className='team-member-description text-primary-white text-sm mt-1'>
+                //   {member.description}
+                // </p>
+              // )} */}
             </div>
           </div>
         ))}
