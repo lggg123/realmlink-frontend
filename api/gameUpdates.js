@@ -42,7 +42,7 @@ export default async function handler (req, res) {
     try {
       // Insert a new record into the 'users' table
       const { data, error } = await supabase
-        .from('users')
+        .from('game_users')
         .insert([{ email }])
 
       // If there's an error, return it
