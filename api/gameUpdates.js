@@ -37,7 +37,7 @@ export default async function handler (req, res) {
     }
 
     // Get email and walletAddress from request body
-    const { email, walletAddress } = req.body
+    const { email } = req.body
 
     try {
       // Insert a new record into the 'users' table
