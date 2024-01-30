@@ -1,4 +1,4 @@
-// /api/register.js
+// /api/partnerUpdates.js
 
 import { createClient } from '@supabase/supabase-js'
 
@@ -37,19 +37,31 @@ export default async function handler (req, res) {
     }
 
     // Get email and walletAddress from request body
-    const { email, walletAddress } = req.body
+    const { 
+        first_name,
+        last_name,
+        email,
+        purpose,
+        message  
+    } = req.body
 
     try {
-      // Insert a new record into the 'users' table
+      // Insert a new record into the 'partnership' table
       const { data, error } = await supabase
-        .from('users')
-        .insert([{ email, wallet_address: walletAddress }])
+        .from('partnership')
+        .insert([{ 
+            first_name,
+            last_name,
+            email,
+            purpose,
+            message 
+        }])
 
       // If there's an error, return it
       if (error) throw error
 
       // Otherwise, return the inserted data
-      res.status(200).json({ message: 'Successful Register' })
+      res.status(200).json({ message: 'Successfully Submitted' })
     } catch (error) {
       res.status(500).json({ error: error.message })
     }
