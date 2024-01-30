@@ -1,4 +1,4 @@
-// /api/register.js
+// /api/artistUpdates.js
 
 import { createClient } from '@supabase/supabase-js'
 
@@ -37,13 +37,13 @@ export default async function handler (req, res) {
     }
 
     // Get email and walletAddress from request body
-    const { email, walletAddress } = req.body
+    const { email } = req.body
 
     try {
       // Insert a new record into the 'users' table
       const { data, error } = await supabase
         .from('users')
-        .insert([{ email, wallet_address: walletAddress }])
+        .insert([{ email }])
 
       // If there's an error, return it
       if (error) throw error

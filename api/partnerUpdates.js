@@ -1,4 +1,4 @@
-// /api/register.js
+// /api/partnerUpdates.js
 
 import { createClient } from '@supabase/supabase-js'
 

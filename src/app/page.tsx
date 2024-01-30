@@ -9,6 +9,9 @@ import BenefitsForBuilders from './components/layout/BenefitsForBuilders'
 import BenefitsForGamers from './components/layout/BenefitsForGamers'
 import FeaturesSection from './components/layout/FeaturesSection'
 import { PrivacyPolicyPopup } from './components/layout/PolicyPopup'
+import Partnership from './components/buttons/Partnership'
+import GameUpdate from './components/buttons/gameUpdate'
+import ArtistUpdate from './components/buttons/artistUpdate'
 
 export default function Home () {
   return (
@@ -25,8 +28,10 @@ export default function Home () {
           <BenefitsForBuilders />
           <JoinCommunitySection />
         </div>
-        <div className="align-center justify-center">
-          
+        <div className="items-center mt-8 flex flex-col justify-center">
+          <Partnership />
+          <GameUpdate />
+          <ArtistUpdate />
         </div>
       </main>
       <Footer />
