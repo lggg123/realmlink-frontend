@@ -10,8 +10,8 @@ import BenefitsForGamers from './components/layout/BenefitsForGamers'
 import FeaturesSection from './components/layout/FeaturesSection'
 import { PrivacyPolicyPopup } from './components/layout/PolicyPopup'
 import Partnership from './components/buttons/Partnership'
-import GameUpdate from './components/buttons/gameUpdate'
-import ArtistUpdate from './components/buttons/artistUpdate'
+import GameUpdate from './components/buttons/GameUpdate'
+import ArtistUpdate from './components/buttons/ArtistUpdate'
 
 export default function Home () {
   return (
