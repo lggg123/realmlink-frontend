@@ -49,7 +49,7 @@ export default async function handler (req, res) {
       if (error) throw error
 
       // Otherwise, return the inserted data
-      res.status(200).json({ message: 'Successful Register' })
+      res.status(200).json({ message: 'Successfully Submitted' })
     } catch (error) {
       res.status(500).json({ error: error.message })
     }

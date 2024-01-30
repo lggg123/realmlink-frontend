@@ -114,7 +114,7 @@ const Partnership: React.FC = () => {
             <button 
                 className={`
                     rounded-lg border-2 
-                    border-brand-green-dark py-2 px-10 
+                    border-brand-green-dark py-2 px-20 
                     text-lg m-2 mt-12 transition duration-300
                     ease-in-out text-brand-green-light
                     hover:bg-brand-green-light hover:text-black`
