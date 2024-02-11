@@ -6,9 +6,10 @@ const Hero: React.FC = () => {
   return (
     <motion.section 
       className='relative bg-hero-pattern bg-cover bg-center bg-no-repeat text-white pt-28 pb-28 px-56 rounded-md shadow-xl backdrop-brightness-50 backdrop-filter backdrop-blur-sm'
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
+      exit={{ opacity: 0, y: -100 }}
     >
         <h1 className='text-5xl font-extrabold mb-6 ml-2'>
           Bring Your Collectibles<br/> Across Realms
