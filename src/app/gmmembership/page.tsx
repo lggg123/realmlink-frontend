@@ -19,7 +19,7 @@ export default function GmMembership () {
                         width={900}
                         />
                         <p className='text-lg mb-4'>
-                            Post "GM @realmlink_infra #Web3Gaming" once a day for 30 days and you will get a tier 1 GM membership,<br /> which includes loyaly airdrops & benefits for being a community supporter.
+                            Post 'GM @realmlink_infra #Web3Gaming' once a day for 30 days and you will get a tier 1 GM membership,<br /> which includes loyaly airdrops & benefits for being a community supporter.
                         </p>
                     </div>
                 </main>
