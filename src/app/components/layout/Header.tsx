@@ -20,6 +20,7 @@ const Header: React.FC = () => {
     { title: 'Team', path: '/team' },
     { title: 'Airdrop', path: '/airdrop' },
     { title: 'Membership', path: '/membership' },
+    { title: 'GM Membership', path: '/gmmembership'},
     { title: 'Whitepaper', path: 'https://jonathanelse.gitbook.io/realmlink/' }
   ]
 
