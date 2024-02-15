@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
           battlefields.
         </p>
         <p className='text-xl mb-4'>
-          Carry your NFT champions, pets and treasures across realms,
+          Carry your champions, pets and treasures across realms,
           <br/>breaking the barriers of traditional gaming.
         </p>
         <Link
