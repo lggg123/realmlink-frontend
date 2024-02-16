@@ -182,6 +182,10 @@
       font-weight: 600; /* Bolder font weight */
       margin-bottom: 0.8rem; /* Spacing between items */
     }
+    .video-mobile {
+      width: 400px;
+      height: 360px;
+    }
   }
   
   
