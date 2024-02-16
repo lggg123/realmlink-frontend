@@ -165,7 +165,9 @@ export default function Team () {
           <h2>Helpful Resources</h2>
           <div className='video-container'>
             <button onClick={() => handleArrowClick('left')}>Left</button>
-            <YouTube videoId={videoIds[currentVideo]} />
+              <div className='video-mobile'>
+                <YouTube videoId={videoIds[currentVideo]} />
+              </div>
             <button onClick={() => handleArrowClick('right')}>Right</button>
           </div>
         </section>
