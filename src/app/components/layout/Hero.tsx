@@ -13,6 +13,7 @@ const Hero: React.FC = () => {
     >
         <h1 className='text-3xl md:text-5xl font-extrabold mb-2 md:mb-6'>
           Bring Your Collectibles<br/> Across Realms
+        </h1>
         <p className='text-md md:text-xl mb-4'>
           Carry your champions, pets, and treasures across realms, breaking the barrier of traditional gaming
         </p>
