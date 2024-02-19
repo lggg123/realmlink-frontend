@@ -35,9 +35,3 @@ body {
   .bg-hero-pattern {
     background-image: url('/bg-heroes.png');
   }
-
-  @media only screen and (max-width: 768px) {
-    .bg-hero-pattern {
-      background-size: 100%;
-    }
-  }
