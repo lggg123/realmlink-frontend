@@ -21,6 +21,7 @@ const Header: React.FC = () => {
     { title: 'Airdrop', path: '/airdrop' },
     { title: 'Membership', path: '/membership' },
     { title: 'GM Membership', path: '/gmmembership'},
+    { title: 'Progress', path: '/progress'},
     { title: 'Whitepaper', path: 'https://jonathanelse.gitbook.io/realmlink/' }
   ]
 
