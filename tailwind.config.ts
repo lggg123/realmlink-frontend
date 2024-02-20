@@ -13,13 +13,18 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      boxShadow: {
+        glow: '0 0 4px rgba(255, 255, 255, 0.8)',
+      },
       colors: {
         'realm-dark-blue': '#0c1929',
         'primary-dark-blue': '#0c1929',
         'primary-white': '#ffffff',
         'brand-green-light': '#8BEC90', // new light green
         'brand-green-dark': '#49B583', // new dark green
-        "brand-black": "#000000"
+        "brand-black": "#000000",
+        "neon-orange": '#FFA500',
+        
         // other colors from the branding guide...
       },
     },
