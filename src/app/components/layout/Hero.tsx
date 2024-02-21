@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
           Bring Your Collectibles<br/> Across Realms
         </h1>
         <p className='text-md md:text-xl mb-4'>
-          Carry your champions, pets, and treasures across realms, breaking the barrier of traditional gaming
+          Carry your champions, pets, and treasures across realms,<br/> breaking the barrier of traditional gaming
         </p>
         <Link
           className='inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 md:py-3 px-6 md:px-8 text-center align-center rounded-full text-lg font-medium cursor-pointer transition duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg'

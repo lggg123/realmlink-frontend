@@ -57,7 +57,7 @@ export default function Dropdown({ options, value, onChange, isActive }: Dropdow
             {options.map(option => (
               <li
                 key={option.title}
-                className='dropdown-item py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100'
+                className='dropdown-item py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-200 rounded'
                 onClick={() => handleSelect(option)}
               >
                 <Link href={option.path}>
