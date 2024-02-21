@@ -68,8 +68,8 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
           Join the Realmlink Community
         </h2>
         <p className='mb-3'>
-          Be the first to discover exciting news, exclusive features, and
-          game-changing updates. Join our community and receive timely
+          Be the first to discover exciting news, exclusive features, and <br />
+          game-changing updates. Join our community and receive timely<br/>
           notifications. Register now to qualify for exclusive airdrops!
         </p>
         {registrationCompleted && (
@@ -103,7 +103,7 @@ const Register: React.FC<RegisterProps> = ({ walletAddress }) => {
         </div>
         <button
           type='submit'
-          className='register-button bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition duration-300 ease-in-out'
+          className='register-button bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 mt-6 rounded-md transition duration-300 ease-in-out'
           disabled={isSubmitting || registrationCompleted}
         >
           {isSubmitting && (
