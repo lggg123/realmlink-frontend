@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -37,7 +39,7 @@ export default function Dropdown({ options, value, onChange, isActive }: Dropdow
         <>
         <div className='dropdown relative'>
           <button
-            className={`dropdown-button rounded-lg border-2 border-brand-green-dark py-2 px-4 text-lg mx-2
+            className={`flex items-center justify-center dropdown-button rounded-lg border-2 border-brand-green-dark py-2 px-4 text-lg mx-2
                       ${
                         isActive(selected.path)
                           ? 'bg-brand-green-light text-black'
@@ -47,7 +49,9 @@ export default function Dropdown({ options, value, onChange, isActive }: Dropdow
                       hover:bg-brand-green-light hover:text-black`}
             onClick={handleToggle}
           >
-            Membership
+            <div>Membership</div>
+            
+            <FontAwesomeIcon icon={open ? faChevronUp : faChevronDown} className="ml-2" />
           </button>
           <ul
             className={`dropdown-list absolute top-full left-0 right-0 rounded-lg border-2 border-brand-green-dark py-2 px-2 text-md mx-2 list-none text-left bg-white z-20 ${
@@ -57,7 +61,7 @@ export default function Dropdown({ options, value, onChange, isActive }: Dropdow
             {options.map(option => (
               <li
                 key={option.title}
-                className='dropdown-item py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-200 rounded'
+                className='dropdown-item py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-200 rounded text-center'
                 onClick={() => handleSelect(option)}
               >
                 <Link href={option.path}>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 
-export default function GmMembership () {
+export default function Progress () {
     return (
         <div className='flex flex-col min-h-screen'>
             <Header />
@@ -15,6 +15,15 @@ export default function GmMembership () {
                         <p className='text-lg mb-4 pt-4 text-center'>
                           Imported, rendered, & animated character to Unity from IPFS.  
                         </p>
+                    </div>
+                    <div className="w-full max-w-4xl px-4 py-8">
+                        <video
+                            className="w-full h-auto rounded-md shadow-lg" // Tailwind CSS classes
+                            controls
+                            src="/unity test.webm" // Path to your video file
+                        >
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </main>
             <Footer />
