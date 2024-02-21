@@ -25,8 +25,8 @@ const Header: React.FC = () => {
   ]
 
   const membershipOptions = [
-    { title: 'Membership', path: '/membership' },
-    { title: 'GM Membership', path: '/gmmembership' }
+    { title: 'Premium', path: '/membership' },
+    { title: 'GM', path: '/gmmembership' }
   ];
 
   // Function to check if the link is active

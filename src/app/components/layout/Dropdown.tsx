@@ -47,10 +47,10 @@ export default function Dropdown({ options, value, onChange, isActive }: Dropdow
                       hover:bg-brand-green-light hover:text-black`}
             onClick={handleToggle}
           >
-            {selected.title}
+            Membership
           </button>
           <ul
-            className={`dropdown-list absolute top-full left-1 right-2 rounded-lg border-2 border-brand-green-dark py-2 px-4 text-md mx-2 list-none text-left bg-white z-20 ${
+            className={`dropdown-list absolute top-full left-0 right-0 rounded-lg border-2 border-brand-green-dark py-2 px-2 text-md mx-2 list-none text-left bg-white z-20 ${
               open ? 'block' : 'hidden'
             }`}
           >
