@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 // Define an interface for the dropdown options
@@ -11,10 +12,11 @@ interface DropdownProps {
     options: Option[]
     value: Option
     onChange: (option: Option) => void
+    isActive: (path: string) => boolean
 }
   
 // Define a custom component for the dropdown
-export default function Dropdown({ options, value, onChange }: DropdownProps) {
+export default function Dropdown({ options, value, onChange, isActive }: DropdownProps) {
     // Use state variables to store the visibility and the selected option
     const [open, setOpen] = useState(false)
     const [selected, setSelected] = useState(value)
@@ -31,24 +33,41 @@ export default function Dropdown({ options, value, onChange }: DropdownProps) {
       setOpen(false)
     }
   
-    // Return the JSX for the dropdown
     return (
-      <div className='dropdown'>
-        <button className='dropdown-button' onClick={handleToggle}>
-          {selected.title}
-        </button>
-        <ul className={`dropdown-list ${open ? 'open' : ''}`}>
-          {options.map(option => (
-            <li
-              key={option.title}
-              className='dropdown-item'
-              onClick={() => handleSelect(option)}
-            >
-              {option.title}
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
+        <>
+        <div className='dropdown relative'>
+          <button
+            className={`dropdown-button rounded-lg border-2 border-brand-green-dark py-2 px-4 text-lg mx-2
+                      ${
+                        isActive(selected.path)
+                          ? 'bg-brand-green-light text-black'
+                          : 'text-brand-green-light'
+                      }
+                      transition duration-300 ease-in-out
+                      hover:bg-brand-green-light hover:text-black`}
+            onClick={handleToggle}
+          >
+            {selected.title}
+          </button>
+          <ul
+            className={`dropdown-list absolute top-full left-1 right-2 rounded-lg border-2 border-brand-green-dark py-2 px-4 text-md mx-2 list-none text-left bg-white z-20 ${
+              open ? 'block' : 'hidden'
+            }`}
+          >
+            {options.map(option => (
+              <li
+                key={option.title}
+                className='dropdown-item py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100'
+                onClick={() => handleSelect(option)}
+              >
+                <Link href={option.path}>
+                  {option.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        </>
+      )
   }
   

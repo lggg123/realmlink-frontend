@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import Dropdown from './Dropdown'
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -19,11 +20,14 @@ const Header: React.FC = () => {
     { title: 'About Us', path: '/about' },
     { title: 'Team', path: '/team' },
     { title: 'Airdrop', path: '/airdrop' },
-    { title: 'Membership', path: '/membership' },
-    { title: 'GM Membership', path: '/gmmembership'},
     { title: 'Progress', path: '/progress'},
     { title: 'Whitepaper', path: 'https://jonathanelse.gitbook.io/realmlink/' }
   ]
+
+  const membershipOptions = [
+    { title: 'Membership', path: '/membership' },
+    { title: 'GM Membership', path: '/gmmembership' }
+  ];
 
   // Function to check if the link is active
   const isActive = (path: string) => {
@@ -81,6 +85,12 @@ const Header: React.FC = () => {
               {item.title}
             </Link>
           ))}
+          <Dropdown
+            options={membershipOptions}
+            value={membershipOptions[0]} // Initial selected option
+            onChange={(option) => console.log('Selected:', option)}
+            isActive={(path) => isActive(path)}
+          />
         </div>
       </nav>
     </header>
