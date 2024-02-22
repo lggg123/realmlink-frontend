@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, MutableRefObject } from 'react';
 import { useForm, Resolver } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { object, string } from 'yup';
+import { motion } from 'framer-motion'
 
 interface partnershipFormData {
     first_name: string,
@@ -110,8 +111,16 @@ const Partnership: React.FC = () => {
 
     return (
         <>
-            <h1 className="text-brand-green-light text-3xl font-semibold mt-20">Interested in More?</h1>
-            <button 
+            <motion.h1 
+                className="text-brand-green-light text-3xl font-semibold mt-20"
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                exit={{ opacity: 0, y: -100 }}
+            >
+                Interested in More?
+            </motion.h1>
+            <motion.button 
                 className={`
                     rounded-lg border-2 
                     border-brand-green-dark py-2 px-20 
@@ -119,10 +128,13 @@ const Partnership: React.FC = () => {
                     ease-in-out text-brand-green-light
                     hover:bg-brand-green-light hover:text-black`
                 }
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 , y: 0 }}
+                transition={{ duration: 1 }}
                 onClick={handleOpenModal}
             >
                 Explore Partnership Opportunities
-            </button>
+            </motion.button>
 
             {isPartnerModalOpen && (
                 <div className="modal fixed inset-0 z-50 flex items-center justify-center overflow-y-auto outline-none focus:outline-none">
