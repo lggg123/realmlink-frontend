@@ -18,7 +18,7 @@ export default function Home () {
     <div className="main-container">
       <Header />
       <PrivacyPolicyPopup />
-      <main className='brand-black min-h-screen flex flex-col items-center justify-center pt-20 pb-0'>
+      <main className='brand-black min-h-screen flex flex-col items-center justify-center pt-2 md:pt-20 pb-0'>
         <Hero />
         <div className='combined-sections'>
           <FeaturesSection />
