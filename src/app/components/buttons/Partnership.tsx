@@ -131,7 +131,7 @@ const Partnership: React.FC = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 , y: 0 }}
                 transition={{ duration: 1 }}
-                viewport={{ once: true }}
+                exit={{ opacity: 0, y: 0 }}
                 onClick={handleOpenModal}
             >
                 Explore Partnership Opportunities
