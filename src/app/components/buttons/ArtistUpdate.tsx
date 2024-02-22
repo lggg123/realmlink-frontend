@@ -1,5 +1,6 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { motion } from 'framer-motion';
 
 interface artistUpdateFormData {
     email: string
@@ -92,7 +93,7 @@ const ArtistUpdate: React.FC = () => {
 
     return (
         <>
-            <button 
+            <motion.button 
                 className={`
                     rounded-lg border-2 
                     border-brand-green-dark py-2 px-16 
@@ -100,10 +101,13 @@ const ArtistUpdate: React.FC = () => {
                     ease-in-out text-brand-green-light
                     hover:bg-brand-green-light hover:text-black`
             }
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 , y: 0 }}
+            transition={{ duration: 1 }}
             onClick={handleArtistOpenModal}
             >
                 Stay Informed on the Artistic Updates
-            </button>
+            </motion.button>
             {isArtistModalOpen && (
                 <div className="modal fixed inset-0 z-50 flex items-center justify-center overflow-y-auto outline-none focus:outline-none">
                     <div className="modal-content relative w-auto max-w-3xl mx-auto my-6" ref={modalRef}>
