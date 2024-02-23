@@ -91,48 +91,28 @@ const GameUpdate: React.FC = () => {
 
     const modalRef = useOutsideClick(handleGameCloseModal) as MutableRefObject<HTMLDivElement | null>;
 
-    const controlsButton = useAnimation()
-    const { ref: refButton, inView: inViewButton  } = useInView({
+    const { ref, inView } = useInView({
         triggerOnce: true,
-        threshold: 0.8,
+        threshold: 0.5
     });
-    const [debouncedInView, setDebouncedInView] = useState(false);
-
-    const updateInView = debounce((inView: boolean) => {
-        setDebouncedInView(inView)
-    })
-
-    useEffect(() => {
-        updateInView(inViewButton);
-      }, [inViewButton]);
-
-    useEffect(() => {
-        if (debouncedInView) {
-            controlsButton.start({ opacity: 1, y: 0})
-        } else {
-            controlsButton.start({ opacity: 0})
-        }
-    }, [controlsButton, debouncedInView])
 
     return (
         <>
-            <motion.button
-                layout
-                ref={refButton}
+            <button
+                ref={ref}
                 className={`
                 rounded-lg border-2 
                 border-brand-green-dark py-2 px-4 
                 text-lg m-2 transition duration-300
                 ease-in-out text-brand-green-light
-                hover:bg-brand-green-light hover:text-black`
+                hover:bg-brand-green-light hover:text-black
+                ${inView  ? 'animate-fadeIn' : ''}
+                `
             }
-            animate={controlsButton}
-            initial={{ opacity: 0 }}
-            transition={{ duration: 1 }}
             onClick={handleGameOpenModal}
             >
                 Stay Informed on the Latest Game Developments
-            </motion.button>
+            </button>
             {isGameModalOpen && (
                 <div className="modal fixed inset-0 z-50 flex items-center justify-center overflow-y-auto outline-none focus:outline-none">
                     <div className="modal-content relative w-auto max-w-3xl mx-auto my-6" ref={modalRef}>
