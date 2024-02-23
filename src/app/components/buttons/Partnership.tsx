@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { object, string } from 'yup';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import debounce from 'lodash.debounce';
 
 interface partnershipFormData {
     first_name: string,
@@ -121,6 +122,11 @@ const Partnership: React.FC = () => {
         triggerOnce: true,
         threshold: 0.5,
     });
+    const [debouncedInView, setDebouncedInView] = useState(false);
+
+    const updateInView = debounce((inView: boolean) => {
+        setDebouncedInView(inView)
+    })
 
     useEffect(() => {
         if (inViewH1) {
@@ -131,12 +137,16 @@ const Partnership: React.FC = () => {
     }, [controlsH1, inViewH1])
 
     useEffect(() => {
-        if (inViewButton) {
+        updateInView(inViewButton);
+      }, [inViewButton]);
+
+    useEffect(() => {
+        if (debouncedInView) {
             controlsButton.start({ opacity: 1, y: 0})
         } else {
             controlsButton.start({ opacity: 0 })
         }
-    }, [controlsButton, inViewButton])
+    }, [controlsButton, debouncedInView])
 
     return (
         <>

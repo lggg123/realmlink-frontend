@@ -2,6 +2,7 @@ import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import debounce from 'lodash.debounce';
 
 interface gameUpdateFormData {
     email: string
@@ -93,17 +94,25 @@ const GameUpdate: React.FC = () => {
     const controlsButton = useAnimation()
     const { ref: refButton, inView: inViewButton  } = useInView({
         triggerOnce: true,
-        threshold: 0.5,
+        threshold: 0.8,
     });
+    const [debouncedInView, setDebouncedInView] = useState(false);
+
+    const updateInView = debounce((inView: boolean) => {
+        setDebouncedInView(inView)
+    })
 
     useEffect(() => {
-        if (inViewButton) {
+        updateInView(inViewButton);
+      }, [inViewButton]);
+
+    useEffect(() => {
+        if (debouncedInView) {
             controlsButton.start({ opacity: 1, y: 0})
         } else {
             controlsButton.start({ opacity: 0})
         }
-        
-    })
+    }, [controlsButton, debouncedInView])
 
     return (
         <>
