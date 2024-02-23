@@ -116,7 +116,8 @@ const GameUpdate: React.FC = () => {
 
     return (
         <>
-            <motion.button 
+            <motion.button
+                layout
                 ref={refButton}
                 className={`
                 rounded-lg border-2 

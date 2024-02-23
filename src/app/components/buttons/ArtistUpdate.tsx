@@ -119,6 +119,7 @@ const ArtistUpdate: React.FC = () => {
     return (
         <>
             <motion.button 
+                layout
                 ref={refButton}
                 className={`
                     rounded-lg border-2 
