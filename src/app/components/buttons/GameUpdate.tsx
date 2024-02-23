@@ -1,6 +1,7 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 interface gameUpdateFormData {
     email: string
@@ -89,9 +90,25 @@ const GameUpdate: React.FC = () => {
 
     const modalRef = useOutsideClick(handleGameCloseModal) as MutableRefObject<HTMLDivElement | null>;
 
+    const controlsButton = useAnimation()
+    const { ref: refButton, inView: inViewButton  } = useInView({
+        triggerOnce: true,
+        threshold: 0.5,
+    });
+
+    useEffect(() => {
+        if (inViewButton) {
+            controlsButton.start({ opacity: 1, y: 0})
+        } else {
+            controlsButton.start({ opacity: 0})
+        }
+        
+    })
+
     return (
         <>
             <motion.button 
+                ref={refButton}
                 className={`
                 rounded-lg border-2 
                 border-brand-green-dark py-2 px-4 
@@ -99,8 +116,8 @@ const GameUpdate: React.FC = () => {
                 ease-in-out text-brand-green-light
                 hover:bg-brand-green-light hover:text-black`
             }
+            animate={controlsButton}
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 , y: 0 }}
             transition={{ duration: 1 }}
             onClick={handleGameOpenModal}
             >

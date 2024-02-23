@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef, MutableRefObject } from 'react';
 import { useForm, Resolver } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { object, string } from 'yup';
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 interface partnershipFormData {
     first_name: string,
@@ -109,18 +110,48 @@ const Partnership: React.FC = () => {
 
     const modalRef = useOutsideClick(handleCloseModal) as MutableRefObject<HTMLDivElement | null>;
 
+    const controlsH1 = useAnimation();
+    const {ref: refH1, inView: inViewH1 } = useInView({
+        triggerOnce: true,
+        threshold: 0.5,
+    });
+
+    const controlsButton = useAnimation()
+    const { ref: refButton, inView: inViewButton  } = useInView({
+        triggerOnce: true,
+        threshold: 0.5,
+    });
+
+    useEffect(() => {
+        if (inViewH1) {
+            controlsH1.start({ opacity: 1, y: 0 });
+        } else {
+            controlsH1.start({ opacity: 0, y: -50});
+        }
+    }, [controlsH1, inViewH1])
+
+    useEffect(() => {
+        if (inViewButton) {
+            controlsButton.start({ opacity: 1, y: 0})
+        } else {
+            controlsButton.start({ opacity: 0 })
+        }
+    }, [controlsButton, inViewButton])
+
     return (
         <>
-            <motion.h1 
+            <motion.h1
+                ref={refH1}
                 className="text-brand-green-light text-3xl font-semibold mt-20"
+                animate={controlsH1}
                 initial={{ opacity: 0, y: -50 }}
-                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
                 exit={{ opacity: 0, y: -100 }}
             >
                 Interested in More?
             </motion.h1>
-            <motion.button 
+            <motion.button
+                ref={refButton}
                 className={`
                     rounded-lg border-2 
                     border-brand-green-dark py-2 px-20 
@@ -128,8 +159,8 @@ const Partnership: React.FC = () => {
                     ease-in-out text-brand-green-light
                     hover:bg-brand-green-light hover:text-black`
                 }
+                animate={controlsButton}
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 , y: 0 }}
                 transition={{ duration: 1 }}
                 onClick={handleOpenModal}
             >
