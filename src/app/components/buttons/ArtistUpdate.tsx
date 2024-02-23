@@ -1,6 +1,8 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { motion } from 'framer-motion';
+import { inView, motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import debounce from 'lodash.debounce';
 
 interface artistUpdateFormData {
     email: string
@@ -90,24 +92,28 @@ const ArtistUpdate: React.FC = () => {
 
     const modalRef = useOutsideClick(handleArtistCloseModal) as MutableRefObject<HTMLDivElement | null>;
 
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.5
+    })
 
     return (
         <>
-            <motion.button 
+            <button
+                ref={ref}
                 className={`
                     rounded-lg border-2 
                     border-brand-green-dark py-2 px-16 
                     text-lg m-2 transition duration-300
                     ease-in-out text-brand-green-light
-                    hover:bg-brand-green-light hover:text-black`
+                    hover:bg-brand-green-light hover:text-black
+                    ${inView ? 'animate-fadeIn' : ''}
+                    `
             }
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 , y: 0 }}
-            transition={{ duration: 1 }}
             onClick={handleArtistOpenModal}
             >
                 Stay Informed on the Artistic Updates
-            </motion.button>
+            </button>
             {isArtistModalOpen && (
                 <div className="modal fixed inset-0 z-50 flex items-center justify-center overflow-y-auto outline-none focus:outline-none">
                     <div className="modal-content relative w-auto max-w-3xl mx-auto my-6" ref={modalRef}>

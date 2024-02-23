@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef, MutableRefObject } from 'react';
 import { useForm, Resolver } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { object, string } from 'yup';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 interface partnershipFormData {
     first_name: string,
@@ -109,32 +110,36 @@ const Partnership: React.FC = () => {
 
     const modalRef = useOutsideClick(handleCloseModal) as MutableRefObject<HTMLDivElement | null>;
 
+    const { ref, inView } = useInView({
+        triggerOnce: true, // Optional: Trigger animation only once
+        threshold: 0.5, // Trigger when 50% of the element is in view
+      });
+
     return (
         <>
-            <motion.h1 
+            <motion.h1
                 className="text-brand-green-light text-3xl font-semibold mt-20"
                 initial={{ opacity: 0, y: -50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0}}
                 transition={{ duration: 1 }}
                 exit={{ opacity: 0, y: -100 }}
             >
                 Interested in More?
             </motion.h1>
-            <motion.button 
+            <button
+                ref={ref}
                 className={`
                     rounded-lg border-2 
                     border-brand-green-dark py-2 px-20 
                     text-lg m-2 mt-12 transition duration-300
                     ease-in-out text-brand-green-light
-                    hover:bg-brand-green-light hover:text-black`
-                }
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 , y: 0 }}
-                transition={{ duration: 1 }}
+                    hover:bg-brand-green-light hover:text-black
+                    ${inView ? 'animate-fadeIn' : ''}
+                    `}
                 onClick={handleOpenModal}
             >
                 Explore Partnership Opportunities
-            </motion.button>
+            </button>
 
             {isPartnerModalOpen && (
                 <div className="modal fixed inset-0 z-50 flex items-center justify-center overflow-y-auto outline-none focus:outline-none">
